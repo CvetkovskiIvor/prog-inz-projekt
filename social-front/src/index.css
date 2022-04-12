@@ -35,24 +35,9 @@ code {
   overflow: auto;
 }
 
-.close-icon {
-  content: 'x';
-  cursor: pointer;
-  position: fixed;
-  right: calc(28% - 30px);
-  top: calc(100vh - 82vh - 33px);
-  background: #ededed;
-  width: 22px;
-  height: 25px;
-  border-radius: 50%;
-  line-height: 20px;
-  text-align: center;
-  border: 1px solid #999;
-  font-size: 15px;
-}
 
 .close-icon2{
   position: fixed;
-  right: calc(-42% - 30px);
-  top: calc(85vh - 82vh - 33px);
+  right: calc(-93% - 30px);
+  top: calc(84vh - 82vh - 33px);
 }

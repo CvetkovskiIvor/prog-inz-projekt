@@ -8,13 +8,12 @@ export default function Profile() {
     
   return (
       <div className="Profile">
-          <Box className='profile-container'>
-            <img className='profile-cover-photo' src={CoverPhoto} alt=''></img>
-            <Box className='profile-image-container'>
-              <img className='profile-image-photo' src={ProfilePhoto} alt=''></img>
-              
-            </Box>
+        <Box className='profile-container'>
+          <img className='profile-cover-photo' src={CoverPhoto} alt=''></img>
+          <Box className='profile-image-container'>
+            <img className='profile-image-photo' src={ProfilePhoto} alt=''></img>
           </Box>
+        </Box>
       </div>
   );
 }

@@ -1,3 +1,9 @@
+/*body{
+  text-align: unset;
+}*/
+.profile{
+  text-align: unset;
+}
 .profile-container {
   width: 300px;
   height: 350px;
@@ -8,9 +14,15 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
 }
 .profile-image-container {
+  position: relative;
   width: 100px;
   height: 100px;
   background-color: white;
+  top: -50px;
+  left: 20px;
+  float: left;
+  margin-right: 23px;
+  text-align: center;
 }
 .profile-cover-photo {
   width: 100%;
@@ -18,7 +30,11 @@
   z-index: 1;
 }
 .profile-image-photo {
-  z-index: 2;
   width: 90px;
   height: 90px;
+  margin-top: 5px;
 }
+/*.profile-username {
+  font-weight: bold;
+  font-size: 20px;
+}*/

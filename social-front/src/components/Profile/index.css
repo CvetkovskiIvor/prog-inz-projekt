@@ -1,17 +1,9 @@
-/*body{
-  text-align: unset;
-}*/
-.profile{
-  text-align: unset;
-}
 .profile-container {
-  width: 300px;
-  height: 350px;
-  background-color: cornsilk;
+  height: auto;
+  max-height: 400px;
   float: right;
-  margin-top: 5%;
-  margin-right: 10%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
+  overflow: hidden;
 }
 .profile-image-container {
   position: relative;
@@ -23,7 +15,6 @@
   float: left;
   margin-right: 23px;
   text-align: center;
-  display: block;
 }
 .profile-cover-photo {
   width: 100%;
@@ -35,11 +26,30 @@
   height: 90px;
   margin-top: 5px;
 }
-.profile-about-container{
-  display: block;
+.profile-about-container {
   text-align: left;
+  margin-left: 23px;
+  margin-right: 23px;
+  margin-bottom: 23px;
 }
-/*.profile-username {
+.profile-about {
   font-weight: bold;
+}
+.profile-bio {
+  font-size: 15px;
+}
+.profile-date {
+  font-size: 12px;
+  font-style: italic;
+}
+.profile-follow-button {
+  width: 100%;
+  border-radius: 20px;
+}
+.profile-follow-button-container {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.profile-username {
   font-size: 20px;
-}*/
+}

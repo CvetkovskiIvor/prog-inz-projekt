@@ -6,7 +6,6 @@ import ProfilePhoto from '../../Images/profile-image.png';
 import { Typography } from '@mui/material';
 import { Container } from '@mui/material';
 import Button from '@mui/material/Button';
-import { margin } from '@mui/system';
 
 export default function Profile() {
   

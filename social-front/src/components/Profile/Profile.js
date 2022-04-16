@@ -10,15 +10,27 @@ export default function Profile() {
     
   return (
       <div className="Profile">
-        <Box className='profile-container'>
+        <Container className='profile-container'>
           <img className='profile-cover-photo' src={CoverPhoto} alt=''></img>
-          <Box className='profile-image-container'>
-            <img className='profile-image-photo' src={ProfilePhoto} alt=''></img>
+          <Box className='profile-info-container'>
+            <Box className='profile-image-container'>
+              <img className='profile-image-photo' src={ProfilePhoto} alt=''></img>
+            </Box>
+            <Typography className='profile-username' fontSize={17} display={'block'}>
+              Synix57
+            </Typography>
           </Box>
-          <Typography className='profile-username' fontWeight={'bold'} fontSize={20}>
-            Synix
-          </Typography>
-        </Box>
+          
+          <Box className='profile-about-container'>
+            <Typography className='profile-about-title'>
+              21, from Rijeka, love to code and fuck many bithces
+            </Typography>
+            <Typography>
+              Ja sam ivor iz Rijeke
+            </Typography>
+          </Box>
+          
+        </Container>
       </div>
   );
 }

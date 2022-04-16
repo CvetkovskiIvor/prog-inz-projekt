@@ -23,6 +23,7 @@
   float: left;
   margin-right: 23px;
   text-align: center;
+  display: block;
 }
 .profile-cover-photo {
   width: 100%;
@@ -33,6 +34,10 @@
   width: 90px;
   height: 90px;
   margin-top: 5px;
+}
+.profile-about-container{
+  display: block;
+  text-align: left;
 }
 /*.profile-username {
   font-weight: bold;

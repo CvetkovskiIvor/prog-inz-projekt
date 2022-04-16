@@ -16,7 +16,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/material/styles';
-import { borderRadius, height, textAlign } from '@mui/system';
+import { borderRadius, height, textAlign } from '@mui/system'; // ne koristim ali mozda ce mi trebat
 
 export default function LabTabs() {
   //constants
@@ -29,10 +29,11 @@ export default function LabTabs() {
 
   const stil_home={
     // dodavat stil za home
+    textAlign:"center",
   }
 
   const stil_info={
-    // dodavat stil za info
+    textAlign:"center",
   }
 
   const stil_ime={
@@ -56,6 +57,7 @@ export default function LabTabs() {
     border: "solid grey", 
     padding: "50px", 
     background: "#D3D3D3",
+    textAlign:"center",
    
   };
 
@@ -66,7 +68,8 @@ export default function LabTabs() {
     borderRadius: "50%",
     border: "solid #D3D3D3",
     marginTop: "-100px",
-    marginLeft: "20px"
+    marginLeft: "20px",
+    textAlign:"center",
   };
 
   const stil_content_banner={

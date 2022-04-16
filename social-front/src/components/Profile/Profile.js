@@ -10,7 +10,7 @@ export default function Profile() {
     
   return (
       <div className="Profile">
-        <Container className='profile-container'>
+        <Box className='profile-container'>
           <img className='profile-cover-photo' src={CoverPhoto} alt=''></img>
           <Box className='profile-info-container'>
             <Box className='profile-image-container'>
@@ -20,17 +20,14 @@ export default function Profile() {
               Synix57
             </Typography>
           </Box>
-          
+          <br></br>
+          <br></br>
           <Box className='profile-about-container'>
             <Typography className='profile-about-title'>
-              21, from Rijeka, love to code and fuck many bithces
-            </Typography>
-            <Typography>
-              Ja sam ivor iz Rijeke
+              21, from Rijeka, love to code
             </Typography>
           </Box>
-          
-        </Container>
+        </Box>
       </div>
   );
 }

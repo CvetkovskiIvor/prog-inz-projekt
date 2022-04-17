@@ -1,9 +1,17 @@
+.profile{
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .profile-container {
   height: auto;
   max-height: 400px;
+  display: block;
+  position: relative;
   float: right;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
   overflow: hidden;
+  background-color: white;
 }
 .profile-image-container {
   position: relative;

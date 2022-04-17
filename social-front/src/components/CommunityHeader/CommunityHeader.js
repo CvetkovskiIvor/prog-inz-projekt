@@ -15,9 +15,10 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { styled } from '@mui/material/styles';
 import { borderRadius, height, textAlign } from '@mui/system'; // ne koristim ali mozda ce mi trebat
 import { styled } from '@mui/material/styles';
+import Content from '../Content/Content';
+import Profile from '../Profile/Profile';
 
 export default function LabTabs() {
   //constants
@@ -25,7 +26,7 @@ export default function LabTabs() {
     float: "right"
   };
   const stil_member_info={
-    width: "70%"
+    width: "70%",
     float: "left"
   };
 
@@ -76,11 +77,6 @@ export default function LabTabs() {
 
   const stil_content_banner={
     //trenutno nepotrebno
-    marginLeft: "20px"
-  };
-
-  const stil_content_banner={
-    //poigrat se sa ovim
   };
 
   const Input = styled('input')({
@@ -238,10 +234,7 @@ export default function LabTabs() {
       </>
       
     );
-
-  }
-
-  
+}
 
  // finalni export
   return (
@@ -260,11 +253,23 @@ export default function LabTabs() {
             <Tab label="About" value="3" />
           </TabList>
         </Box>
-        <TabPanel value="1" sx={stil_home}>{Home_options()}<br/>Add More options</TabPanel>
-        <TabPanel value="2">{ljudi()}{members_information()}</TabPanel>
-        <TabPanel value="3"sx={stil_info}>{about_info()}</TabPanel>
-        <TabPanel value="2" sx={stil_ljudi}>{ljudi()}</TabPanel>
-        <TabPanel value="3">Add info</TabPanel>
+        <TabPanel value="1" sx={stil_home}>
+          {Home_options()}
+          <Profile/>
+          <Content/>
+          <Content/>
+          <Content/>
+          <Content/>
+          <br/>
+          Add More options
+        </TabPanel>
+        <TabPanel value="2">
+          {ljudi()}
+          {members_information()}
+        </TabPanel>
+        <TabPanel value="3"sx={stil_info}>
+          {about_info()}
+        </TabPanel>
       </TabContext>
     </Box>
     </>

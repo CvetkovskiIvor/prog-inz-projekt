@@ -8,9 +8,12 @@ function App() {
   return (
     <div>
      <Navbar/>
-     <Content/>
      <CommunityHeader/>
      <Profile/>
+     <Content/>
+     <Content/>
+     <Content/>
+     <Content/>
     </div>
   );
 }

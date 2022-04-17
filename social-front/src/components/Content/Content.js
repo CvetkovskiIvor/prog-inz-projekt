@@ -18,7 +18,7 @@ export default function ContentTemplate() {
         <Box className='box1' >
             <Typography variant='h6' component = "div" gutterBottom className='profil'>
                 <a className='pic' href="https://www.youtube.com/watch?v=_tkY1ZHzHdQ"> 
-                    <img src="https://www.google.com" alt="Pic" />
+                  <img src="https://www.google.com" alt="Pic" />
                 </a>
                 <p className='ime'>
                   Profile name
@@ -34,8 +34,8 @@ export default function ContentTemplate() {
                 quasi quidem quibusdam.
             </Typography>
             <a className='media' href="https://www.youtube.com/watch?v=_tkY1ZHzHdQ"> 
-                    <img src="https://www.google.com" alt="Ako postoji slika ili video" />
-                </a>
+              <img src="https://www.google.com" alt="Ako postoji slika ili video" />
+            </a>
                 
             <div className="allIcons">
               <div className='like' >

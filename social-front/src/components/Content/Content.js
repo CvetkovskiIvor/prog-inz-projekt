@@ -18,7 +18,7 @@ export default function ContentTemplate() {
         <Box className='box1' >
             <Typography variant='h6' component = "div" gutterBottom className='profil'>
                 <a className='pic' href="https://www.youtube.com/watch?v=_tkY1ZHzHdQ"> 
-                  <img src="https://www.google.com" alt="Pic" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRmFAthtQhLpdQHTuG9twUwh9SpCxWrMvGw&usqp=CAU" alt="Pic" />
                 </a>
                 <p className='ime'>
                   Profile name

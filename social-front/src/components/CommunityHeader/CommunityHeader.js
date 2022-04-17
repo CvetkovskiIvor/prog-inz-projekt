@@ -17,6 +17,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/material/styles';
 import { borderRadius, height, textAlign } from '@mui/system'; // ne koristim ali mozda ce mi trebat
+import { styled } from '@mui/material/styles';
 
 export default function LabTabs() {
   //constants
@@ -25,6 +26,7 @@ export default function LabTabs() {
   };
   const stil_member_info={
     width: "70%"
+    float: "left"
   };
 
   const stil_home={
@@ -74,6 +76,11 @@ export default function LabTabs() {
 
   const stil_content_banner={
     //trenutno nepotrebno
+    marginLeft: "20px"
+  };
+
+  const stil_content_banner={
+    //poigrat se sa ovim
   };
 
   const Input = styled('input')({
@@ -164,7 +171,7 @@ export default function LabTabs() {
     </div>
     );
   }
-
+  
   function add_upload(){  
     return(
       <Stack>
@@ -198,6 +205,7 @@ export default function LabTabs() {
     return (
         <div style={stil_ljudi}>
           <h2>Currently Online:</h2><br/>
+            
         <AvatarGroup total={24}>
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
             <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
@@ -255,11 +263,11 @@ export default function LabTabs() {
         <TabPanel value="1" sx={stil_home}>{Home_options()}<br/>Add More options</TabPanel>
         <TabPanel value="2">{ljudi()}{members_information()}</TabPanel>
         <TabPanel value="3"sx={stil_info}>{about_info()}</TabPanel>
+        <TabPanel value="2" sx={stil_ljudi}>{ljudi()}</TabPanel>
+        <TabPanel value="3">Add info</TabPanel>
       </TabContext>
     </Box>
     </>
   );
 
-
- 
 }

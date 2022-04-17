@@ -6,7 +6,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import Popup from '../Popup/Popup';
 import SignUp from '../SignIn/SignUp';
 import SignIn from '../SignIn/SignIn';
@@ -17,7 +16,6 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -104,7 +102,7 @@ export default function Navbar() {
                   inputProps={{ 'aria-label': 'search' }}
                 />
               </Search>
-              <Typography variant="h6" component="div" align = "center" sx={{ flexGrow: 1 }}
+              <Typography variant="h6" component="div" align = 'center' sx={{ flexGrow: 1 }}
               >Game Times
               </Typography>
               <Button color="inherit" onClick={toggleSignUp}>Sign up</Button>

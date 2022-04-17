@@ -19,6 +19,7 @@ import Menu from '@mui/material/Menu';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -84,14 +85,13 @@ export default function Navbar() {
         setIsSignedUp((prevIsSignedUp)=> !prevIsSignedUp);
       }
     return (
-        <div className="App">
+        <div>
           
           <Box sx={{ flexGrow: 1 }}>
           <AppBar position="static">
             <Toolbar>
               <Avatar
-              alt="Remy Sharp"
-              src="prog-inz-projekt\social-front\src\components\Navbar\1.png"
+              src="https://dbdzm869oupei.cloudfront.net/img/alfombretaratoli/preview/40906.png"
               sx={{ width: 50, height: 50 }}
               onclick = {handleClose}
               />
@@ -104,23 +104,13 @@ export default function Navbar() {
                   inputProps={{ 'aria-label': 'search' }}
                 />
               </Search>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}
-              >Reddit 2.0
+              <Typography variant="h6" component="div" align = "center" sx={{ flexGrow: 1 }}
+              >Game Times
               </Typography>
               <Button color="inherit" onClick={toggleSignUp}>Sign up</Button>
               <Button color="inherit" onClick={toggleSignIn}>Login</Button>
               {auth && (
             <div>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}

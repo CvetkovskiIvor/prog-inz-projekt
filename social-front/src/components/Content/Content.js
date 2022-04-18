@@ -8,6 +8,7 @@ import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import VideogameAssetOffIcon from '@mui/icons-material/VideogameAssetOff';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import ShareIcon from '@mui/icons-material/Share';
+import Avatar from '@mui/material/Avatar';
 import './ContentSS.css';
 
 export default function ContentTemplate() {
@@ -17,12 +18,10 @@ export default function ContentTemplate() {
       <Container maxWidth="sm" className="qube">
         <Box className='box1' >
             <Typography variant='h6' component = "div" gutterBottom className='profil'>
-                <a className='pic' href="https://www.youtube.com/watch?v=_tkY1ZHzHdQ"> 
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRmFAthtQhLpdQHTuG9twUwh9SpCxWrMvGw&usqp=CAU" alt="Pic" />
-                </a>
-                <p className='ime'>
-                  Profile name
-                </p>
+                  <Avatar alt="Profile pic" className='profpic'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRmFAthtQhLpdQHTuG9twUwh9SpCxWrMvGw&usqp=CAU" />
+                   <p className='ime'>
+                      Profile name
+                    </p>
             </Typography>
             <Typography  variant="h4" component = "div" gutterBottom className='naslov'>
                Post title.

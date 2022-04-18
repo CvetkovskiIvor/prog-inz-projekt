@@ -4,6 +4,8 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   }
+
+
   .box1 {
     border-radius: 10px 50px;
     border: 2px solid #e1f5fe;
@@ -21,11 +23,12 @@
     background-color: #e1f5fe;
   }
 
-  .profil {
-    display: inline;
+  .profpic {
+    position: absolute;
   }
 
   .ime {
+    margin-left: 50px;
     display: inline;
     text-shadow:0.4px 0.4px;
     font-size: medium;

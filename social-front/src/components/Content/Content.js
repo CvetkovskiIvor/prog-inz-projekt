@@ -8,9 +8,13 @@ import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import VideogameAssetOffIcon from '@mui/icons-material/VideogameAssetOff';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import ShareIcon from '@mui/icons-material/Share';
+import { useSelector } from 'react-redux';
 import './ContentSS.css';
 
 export default function ContentTemplate() {
+const posts = useSelector((state) => state.posts);
+console.log(posts);
+  
   return (
     <React.Fragment>
       <CssBaseline />

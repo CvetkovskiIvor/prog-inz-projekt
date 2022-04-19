@@ -107,6 +107,16 @@ export default function Navbar() {
               </Typography>
               <Button color="inherit" onClick={toggleSignUp}>Sign up</Button>
               <Button color="inherit" onClick={toggleSignIn}>Login</Button>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
               {auth && (
             <div>
               <Menu

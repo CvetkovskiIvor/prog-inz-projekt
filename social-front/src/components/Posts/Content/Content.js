@@ -8,13 +8,11 @@ import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import VideogameAssetOffIcon from '@mui/icons-material/VideogameAssetOff';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import ShareIcon from '@mui/icons-material/Share';
-import { useSelector } from 'react-redux';
 import './ContentSS.css';
 
-export default function ContentTemplate() {
-const posts = useSelector((state) => state.posts);
-console.log(posts);
-  
+const ContentTemplate = ({post}) => {
+
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -25,17 +23,14 @@ console.log(posts);
                   <img src="https://www.google.com" alt="Pic" />
                 </a>
                 <p className='ime'>
-                  Profile name
+                  {post.creator}
                 </p>
             </Typography>
             <Typography  variant="h4" component = "div" gutterBottom className='naslov'>
-               Post title.
+               {post.title}
             </Typography>
             <Typography  variant="subtitle1" component = "div" gutterBottom className='opis'>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                quasi quidem quibusdam.
+                {post.message}
             </Typography>
             <a className='media' href="https://www.youtube.com/watch?v=_tkY1ZHzHdQ"> 
               <img src="https://www.google.com" alt="Ako postoji slika ili video" />
@@ -65,4 +60,6 @@ console.log(posts);
       </Container>
     </React.Fragment>
   );
-}
+};
+
+export default ContentTemplate;

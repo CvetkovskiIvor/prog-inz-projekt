@@ -15,25 +15,22 @@ export default function ContentTemplate() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="sm" className="qube">
+      <Container  className="qube">
         <Box className='box1' >
-            <Typography variant='h6' component = "div" gutterBottom className='profil'>
+            <Box className='profilBox'>
                   <Avatar alt="Profile pic" className='profpic'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRmFAthtQhLpdQHTuG9twUwh9SpCxWrMvGw&usqp=CAU" />
                    <p className='ime'>
                       Profile name
                     </p>
-            </Typography>
-            <Typography  variant="h4" component = "div" gutterBottom className='naslov'>
+            </Box>
+            <Typography  variant="h5" component = "div" gutterBottom className='naslov'>
                Post title.
             </Typography>
             <Typography  variant="subtitle1" component = "div" gutterBottom className='opis'>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
-                neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
-                quasi quidem quibusdam.
+              abc
             </Typography>
             <a className='media' href="https://www.youtube.com/watch?v=_tkY1ZHzHdQ"> 
-              <img src="https://www.google.com" alt="Ako postoji slika ili video" />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRmFAthtQhLpdQHTuG9twUwh9SpCxWrMvGw&usqp=CAU" className='postSlika'alt="Ako postoji slika ili video" />
             </a>
                 
             <div className="allIcons">

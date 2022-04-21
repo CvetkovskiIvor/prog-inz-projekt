@@ -17,8 +17,9 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { borderRadius, height, textAlign } from '@mui/system'; // ne koristim ali mozda ce mi trebat
 import { styled } from '@mui/material/styles';
-import Content from '../Content/Content';
+import Content from '../Posts/Content/Content';
 import Profile from '../Profile/Profile';
+
 
 export default function LabTabs() {
   //constants
@@ -257,10 +258,10 @@ export default function LabTabs() {
           {Home_options()}
           <Profile/>
           <Content/>
+          {/* <Content/>
           <Content/>
           <Content/>
-          <Content/>
-          <br/>
+          <br/> */}
           Add More options
         </TabPanel>
         <TabPanel value="2">

@@ -8,9 +8,12 @@ import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import VideogameAssetOffIcon from '@mui/icons-material/VideogameAssetOff';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import ShareIcon from '@mui/icons-material/Share';
+import { useDispatch } from 'react-redux';
+import {likePost} from '../../../actions/posts';
 import './ContentSS.css';
 
-const ContentTemplate = ({post}) => {
+const ContentTemplate = ({post, setCurrentId}) => {
+  const dispatch = useDispatch();
 
 
   return (
@@ -38,10 +41,10 @@ const ContentTemplate = ({post}) => {
                 
             <div className="allIcons">
               <div className='like' >
-                <IconButton aria-label="VideogameAsset" size="medium">
+                <IconButton aria-label="VideogameAsset" size="medium" onClick={() => dispatch(likePost(post._id))}>
                 <VideogameAssetIcon fontSize="inherit" />
                 </IconButton>
-                58
+                {post.likeCount}
                 <IconButton aria-label="VideogameAssetOff" size="medium">
                 <VideogameAssetOffIcon fontSize="inherit" />
                 </IconButton>

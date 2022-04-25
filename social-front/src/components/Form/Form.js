@@ -13,11 +13,14 @@ import { createPost } from '../../actions/posts';
 
 
 
-const Form = () => {
-    const [postData, setPostData] = useState({creator:'', title:'', message:'', selectedFile:''});
-    // const classes = useStyles();
+const Form = ({ currentId, setCurrentId }) => {
+    const [postData, setPostData] = useState({creator:'', title:'', message:'', tags: '', selectedFile:''});
+    const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        if (post) setPostData(post);
+      }, [post]);
 
 const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,6 +29,7 @@ const handleSubmit = (e) => {
 
 }
 const clear = () => {
+    setCurrentId(0);
     setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
   };
 

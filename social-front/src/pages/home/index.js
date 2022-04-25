@@ -3,13 +3,10 @@ import { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { Grow } from '@mui/material';
-import Navbar from './components/Navbar/Navbar';
-import CommunityHeader from './components/CommunityHeader/CommunityHeader';
+import Navbar from '../../components/Navbar/Navbar';
 import {useDispatch} from 'react-redux';
-import Form from './components/Form/Form';
-import Posts from './components/Posts/Posts';
-import {getPosts} from './actions/posts'; 
-
+import Posts from '../../components/Posts/Posts';
+import {getPosts} from '../../actions/posts'; 
 
 function App() {
   const [currentId, setCurrentId] = useState(0);
@@ -22,7 +19,6 @@ function App() {
   return (
     <div>
      <Navbar/>
-     {/* <CommunityHeader/> */}
      <Grow in>
         <Container>
           <Grid container justify="space-between" alignItems="stretch" spacing={3}>
@@ -36,8 +32,6 @@ function App() {
           </Grid>
         </Container>
       </Grow>
-    
-
     </div>
   );
 };

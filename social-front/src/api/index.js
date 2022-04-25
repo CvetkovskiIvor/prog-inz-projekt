@@ -11,5 +11,5 @@ export const createPost = (newPost) => axios.post(postUrl, newPost);
 export const fetchProfiles = () => axios.get(profileUrl);
 export const createProfile = (newProfile) => axios.post(profileUrl, newProfile);
 
-export const fetchCommunities = () => axios.get(profileUrl);
-export const createCommunity = (newProfile) => axios.post(profileUrl, newProfile);
+export const fetchCommunities = () => axios.get(communityUrl);
+export const createCommunity = (newCommunity) => axios.post(communityUrl, newCommunity);

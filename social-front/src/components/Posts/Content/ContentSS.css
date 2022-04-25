@@ -1,6 +1,6 @@
 .qube {
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  display: grid;
   text-align: left;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -51,6 +51,11 @@
 .opis {
   min-height: 50px;
   word-wrap: break-word;
+}
+
+.media {
+  display: flex;
+  justify-content: center;
 }
 
 .slika {

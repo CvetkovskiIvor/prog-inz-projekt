@@ -1,4 +1,6 @@
 .qube {
+  position: absolute;
+  display: grid;
   text-align: left;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -7,20 +9,19 @@
 
 .box1 {
   border-radius: 10px 50px;
-  border: 2px solid #e1f5fe;
+  border: 2px solid #40464f;
   padding: 15px;
   margin-top: 15px;
   margin-bottom: 15px;
   width: auto;
   max-width: 520px;
   height: fit-content;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
-              0 2px 4px rgba(0,0,0,0.07), 
-              0 4px 8px rgba(0,0,0,0.07), 
-              0 8px 16px rgba(0,0,0,0.07),
-              0 16px 32px rgba(0,0,0,0.07), 
-              0 32px 64px rgba(0,0,0,0.07);
-  background-color: #e1f5fe;
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px,
+              rgba(240, 46, 170, 0.3) 0px 10px, 
+              rgba(240, 46, 170, 0.2) 0px 15px, 
+              rgba(240, 46, 170, 0.1) 0px 20px, 
+              rgba(240, 46, 170, 0.05) 0px 25px;
+  background-color: #40464f;
 }
 
 .profilBox {
@@ -29,46 +30,73 @@
 
 .profpic {
   float: left;
+  outline-style: double;
+  outline-width: 6px;
+  outline-color: rgb(221, 179, 218);
 }
 
 .ime {
   margin-left: 50px;
   text-shadow:0.4px 0.4px;
-  font-size: medium;
-  border-radius: 5px;
-  padding: 0px;
-  font-style: italic;
+  font-size: large;
   text-decoration: underline;
-  color: rgba(14, 166, 200, 0.621);
+  width: fit-content;
+  color: rgba(200, 145, 251, 0.4);
 }
 
 .naslov {
   font-weight: bold;
+  color: rgb(236, 221, 201);
+}
+
+.line {
+  border-width: 1px;
+  height: 2px;
+  border-color: rgb(207, 174, 237);
+  background-color: rgb(69, 14, 121);
 }
 
 .opis {
   min-height: 50px;
   word-wrap: break-word;
+  color: rgb(189, 183, 183);
 }
 
-.media{
-  display: block; 
-  margin: auto;
-  height: fit-content;
+.media {
+  display: flex;
+  justify-content: center;
+}
+
+.slika {
+  border-radius: 8px;
   width: fit-content;
-}
-
-.postSlika {
-  max-width: 550px;
+  height: fit-content;
+  max-width: 100%;
   max-height: 500px;
 }
 
-.like {
+.likedislike {
   position: absolute;
   z-index: 1;
-    
+  color: rgb(205, 200, 193);
+}
+
+.like {
+  color: rgb(26, 238, 26);
+}
+
+.dislike {
+  color: rgb(232, 96, 162);
 }
 
 .comShare {
   position: relative;
+}
+
+.com {
+  color: rgb(217, 93, 245);
+}
+
+.share {
+  color: rgb(203, 54, 248);
 }

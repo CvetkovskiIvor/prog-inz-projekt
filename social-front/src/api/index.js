@@ -1,8 +1,15 @@
 import axios from 'axios';
 
-const url = `http://${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/posts`;
+const postUrl = `http://${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/posts`;
+const profileUrl = `http://${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/profiles`;
+const communityUrl = `http://${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/communities`;
 
-console.log(url);
 
-export const fetchPosts = () => axios.get(url);
-export const createPost = (newPost) => axios.post(url, newPost);
+export const fetchPosts = () => axios.get(postUrl);
+export const createPost = (newPost) => axios.post(postUrl, newPost);
+
+export const fetchProfiles = () => axios.get(profileUrl);
+export const createProfile = (newProfile) => axios.post(profileUrl, newProfile);
+
+export const fetchCommunities = () => axios.get(profileUrl);
+export const createCommunity = (newProfile) => axios.post(profileUrl, newProfile);

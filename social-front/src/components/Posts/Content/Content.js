@@ -9,7 +9,7 @@ import VideogameAssetOffIcon from '@mui/icons-material/VideogameAssetOff';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import ShareIcon from '@mui/icons-material/Share';
 import { useDispatch } from 'react-redux';
-import {likePost} from '../../../actions/posts';
+import {likePost, disLikePost} from '../../../actions/posts';
 import './ContentSS.css';
 
 const ContentTemplate = ({post, setCurrentId}) => {
@@ -45,10 +45,10 @@ const ContentTemplate = ({post, setCurrentId}) => {
                 <VideogameAssetIcon fontSize="inherit" />
                 </IconButton>
                 {post.likeCount}
-                <IconButton aria-label="VideogameAssetOff" size="medium">
+                <IconButton aria-label="VideogameAssetOff" size="medium" onClick={() => dispatch(disLikePost(post._id))}>
                 <VideogameAssetOffIcon fontSize="inherit" />
                 </IconButton>
-                23
+                {post.disLikeCount}
               </div>
               <div className='comShare' align='right'>
               <IconButton aria-label="InsertComment" size="medium">

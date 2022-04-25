@@ -16,6 +16,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Avatar from '@mui/material/Avatar';
+import './Navbar.css';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -85,12 +86,12 @@ export default function Navbar() {
     return (
         <div>
           
-          <Box sx={{ flexGrow: 1 }}>
-          <AppBar position="static">
+          <Box sx={{ flexGrow: 1}}>
+          <AppBar position="static" className = "Navbar">
             <Toolbar>
               <Avatar
               src="https://dbdzm869oupei.cloudfront.net/img/alfombretaratoli/preview/40906.png"
-              sx={{ width: 50, height: 50 }}
+              sx={{ width: 55, height: 55}}
               onclick = {handleClose}
               />
               <Search>
@@ -98,15 +99,15 @@ export default function Navbar() {
                   <SearchIcon />
                 </SearchIconWrapper>
                 <StyledInputBase
-                  placeholder="Search…"
+                  placeholder="Search…" sx={{fontFamily: "-moz-initial", fontSize: 18, padding: (1, 1.2)}}
                   inputProps={{ 'aria-label': 'search' }}
                 />
               </Search>
-              <Typography variant="h6" component="div" align = 'center' sx={{ flexGrow: 1 }}
+              <Typography variant="h5" component="div" align = "center" sx={{ flexGrow: 1, fontFamily: "Fantasy", fontSize: 28, paddingRight: 22}}
               >Game Times
               </Typography>
-              <Button color="inherit" onClick={toggleSignUp}>Sign up</Button>
-              <Button color="inherit" onClick={toggleSignIn}>Login</Button>
+              <Button color="inherit" sx={{fontSize: 15, fontFamily: "fantasy"}} onClick={toggleSignUp}>Sign up</Button>
+              <Button color="inherit" sx={{fontSize: 15, fontFamily: "fantasy"}} onClick={toggleSignIn}>Login</Button>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -134,8 +135,8 @@ export default function Navbar() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem sx={{fontSize: 14, fontFamily: "fantasy"}} onClick={handleClose}>Profile</MenuItem>
+                <MenuItem sx={{fontSize: 14, fontFamily: "fantasy"}} onClick={handleClose}>My account</MenuItem>
               </Menu>
             </div>
           )}

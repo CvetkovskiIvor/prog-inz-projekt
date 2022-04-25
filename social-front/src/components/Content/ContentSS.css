@@ -1,6 +1,5 @@
 .qube {
-  width: 30%;
-  min-width: 400px;
+  
   text-align: left;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -13,8 +12,8 @@
   padding: 15px;
   margin-top: 15px;
   margin-bottom: 15px;
-  width: 100%;
-  min-height: 320px;
+  width: auto;
+  max-width: 520px;
   height: fit-content;
   box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
               0 2px 4px rgba(0,0,0,0.07), 
@@ -48,17 +47,19 @@
   font-weight: bold;
 }
 
+.opis {
+  min-height: 50px;
+  word-wrap: break-word;
+}
+
 .media{
   display: block; 
   margin: auto;
   height: fit-content;
   width: fit-content;
-
 }
 
 .postSlika {
-  min-width: 150px;
-  min-height: 150px;
   max-width: 550px;
   max-height: 500px;
 }

@@ -15,7 +15,7 @@ export default function ContentTemplate() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container  className="qube">
+      <Container className="qube" sx={{width:'30%'}}>
         <Box className='box1' >
             <Box className='profilBox'>
                   <Avatar alt="Profile pic" className='profpic'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRmFAthtQhLpdQHTuG9twUwh9SpCxWrMvGw&usqp=CAU" />
@@ -27,7 +27,7 @@ export default function ContentTemplate() {
                Post title.
             </Typography>
             <Typography  variant="subtitle1" component = "div" gutterBottom className='opis'>
-              abc
+              abc lorem ti ga ipsaowerhtoiwehroitheoirhtoiewhrtoihweroitheoirhtoiwerhtioehwrtoiheroitherwoithoerih
             </Typography>
             <a className='media' href="https://www.youtube.com/watch?v=_tkY1ZHzHdQ"> 
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRmFAthtQhLpdQHTuG9twUwh9SpCxWrMvGw&usqp=CAU" className='postSlika'alt="Ako postoji slika ili video" />

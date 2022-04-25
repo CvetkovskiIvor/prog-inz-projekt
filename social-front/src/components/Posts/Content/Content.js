@@ -22,37 +22,38 @@ const ContentTemplate = ({post, setCurrentId}) => {
       <Container className="qube">
         <Box className='box1' >
             <Box className='profilBox'>
-              <Avatar alt="Profile pic" className='profpic'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRmFAthtQhLpdQHTuG9twUwh9SpCxWrMvGw&usqp=CAU" />
+              <Avatar alt="Profile pic" className='profpic'src="https://static.senpai.gg/lol/img/champion/tiles/Lux_0.webp" />
               <p className='ime'>
-                {post.creator}
+                {post.creator} 
               </p>
             </Box>
             <Typography  variant="h5" component = "div" gutterBottom className='naslov'>
               {post.title}
             </Typography>
+            <hr className='line'></hr>
             <Typography  variant="subtitle1" component = "div" gutterBottom className='opis'>
               {post.message}
             </Typography>
             <div className='media'>
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRmFAthtQhLpdQHTuG9twUwh9SpCxWrMvGw&usqp=CAU" className='slika' alt="Ako postoji slika ili video" />
+              <img src="https://1.bp.blogspot.com/-fHc57YnEWSg/VUpggYd6KCI/AAAAAAAApgA/HJkBhsejNIw/s1600/MordekaiserLoadScreen_5.png" className='slika' alt="Ako postoji slika ili video" />
               </div>
             <div className="allIcons">
-              <div className='like' >
+              <div className='likedislike' >
                 <IconButton aria-label="VideogameAsset" size="medium" onClick={() => dispatch(likePost(post._id))}>
-                <VideogameAssetIcon fontSize="inherit" />
+                <VideogameAssetIcon className='like' fontSize="inherit" />
                 </IconButton>
                 {post.likeCount}
                 <IconButton aria-label="VideogameAssetOff" size="medium" onClick={() => dispatch(disLikePost(post._id))}>
-                <VideogameAssetOffIcon fontSize="inherit" />
+                <VideogameAssetOffIcon className='dislike' fontSize="inherit" />
                 </IconButton>
                 {post.disLikeCount}
               </div>
               <div className='comShare' align='right'>
                 <IconButton aria-label="InsertComment" size="medium">
-                  <InsertCommentIcon fontSize="inherit"/>
+                  <InsertCommentIcon className='com' fontSize="inherit"/>
                 </IconButton>
                 <IconButton aria-label="Share" size="medium">
-                  <ShareIcon fontSize="inherit"/>
+                  <ShareIcon className='share' fontSize="inherit"/>
                 </IconButton>
               </div>
             </div>

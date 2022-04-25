@@ -16,7 +16,6 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Avatar from '@mui/material/Avatar';
-import './Navbar.css';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -87,7 +86,7 @@ export default function Navbar() {
         <div>
           
           <Box sx={{ flexGrow: 1}}>
-          <AppBar position="static" className = "Navbar">
+          <AppBar position="static" sx = {{bgcolor: "#2C2F33"}}>
             <Toolbar>
               <Avatar
               src="https://dbdzm869oupei.cloudfront.net/img/alfombretaratoli/preview/40906.png"

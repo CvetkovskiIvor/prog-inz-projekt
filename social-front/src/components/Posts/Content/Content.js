@@ -19,7 +19,7 @@ const ContentTemplate = ({post, setCurrentId}) => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container className="qube" sx={{width:'30%'}}>
+      <Container className="qube">
         <Box className='box1' >
             <Box className='profilBox'>
               <Avatar alt="Profile pic" className='profpic'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRmFAthtQhLpdQHTuG9twUwh9SpCxWrMvGw&usqp=CAU" />
@@ -33,10 +33,9 @@ const ContentTemplate = ({post, setCurrentId}) => {
             <Typography  variant="subtitle1" component = "div" gutterBottom className='opis'>
               {post.message}
             </Typography>
-            <a className='media' href="https://www.youtube.com/watch?v=_tkY1ZHzHdQ"> 
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRmFAthtQhLpdQHTuG9twUwh9SpCxWrMvGw&usqp=CAU" className='postSlika'alt="Ako postoji slika ili video" />
-            </a>
-                
+            <div className='media'>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRmFAthtQhLpdQHTuG9twUwh9SpCxWrMvGw&usqp=CAU" className='slika' alt="Ako postoji slika ili video" />
+              </div>
             <div className="allIcons">
               <div className='like' >
                 <IconButton aria-label="VideogameAsset" size="medium" onClick={() => dispatch(likePost(post._id))}>

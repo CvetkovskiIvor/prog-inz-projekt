@@ -51,16 +51,11 @@
   word-wrap: break-word;
 }
 
-.media{
-  display: block; 
-  margin: auto;
-  height: fit-content;
+.slika {
   width: fit-content;
-}
-
-.postSlika {
-  max-width: 550px;
-  max-height: 500px;
+  height: fit-content;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .like {

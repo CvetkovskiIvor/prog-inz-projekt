@@ -98,15 +98,15 @@ export default function Navbar() {
                   <SearchIcon />
                 </SearchIconWrapper>
                 <StyledInputBase
-                  placeholder="Search…"
+                  placeholder="Search…" sx={{fontFamily: "-moz-initial", fontSize: 18, padding: (1, 1.2)}}
                   inputProps={{ 'aria-label': 'search' }}
                 />
               </Search>
-              <Typography variant="h6" component="div" align = 'center' sx={{ flexGrow: 1 }}
+              <Typography variant="h5" component="div" align = 'center' sx={{ flexGrow: 1, fontFamily: "Fantasy", fontSize: 28}}
               >Game Times
               </Typography>
-              <Button color="inherit" onClick={toggleSignUp}>Sign up</Button>
-              <Button color="inherit" onClick={toggleSignIn}>Login</Button>
+              <Button color="inherit" sx={{fontSize: 15, fontFamily: "fantasy"}} onClick={toggleSignUp}>Sign up</Button>
+              <Button color="inherit" sx={{fontSize: 15, fontFamily: "fantasy"}} onClick={toggleSignIn}>Login</Button>
               <IconButton
                 size="large"
                 aria-label="account of current user"

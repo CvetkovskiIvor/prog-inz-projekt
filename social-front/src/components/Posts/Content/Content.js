@@ -8,10 +8,13 @@ import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import VideogameAssetOffIcon from '@mui/icons-material/VideogameAssetOff';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import ShareIcon from '@mui/icons-material/Share';
+import { useDispatch } from 'react-redux';
+import {likePost, disLikePost} from '../../../actions/posts';
 import Avatar from '@mui/material/Avatar';
 import './ContentSS.css';
 
-const ContentTemplate = ({post}) => {
+const ContentTemplate = ({post, setCurrentId}) => {
+  const dispatch = useDispatch();
 
   return (
     <React.Fragment>
@@ -36,14 +39,14 @@ const ContentTemplate = ({post}) => {
                 
             <div className="allIcons">
               <div className='like' >
-                <IconButton aria-label="VideogameAsset" size="medium">
-                  <VideogameAssetIcon fontSize="inherit" />
+                <IconButton aria-label="VideogameAsset" size="medium" onClick={() => dispatch(likePost(post._id))}>
+                <VideogameAssetIcon fontSize="inherit" />
                 </IconButton>
-                58
-                <IconButton aria-label="VideogameAssetOff" size="medium">
-                  <VideogameAssetOffIcon fontSize="inherit" />
+                {post.likeCount}
+                <IconButton aria-label="VideogameAssetOff" size="medium" onClick={() => dispatch(disLikePost(post._id))}>
+                <VideogameAssetOffIcon fontSize="inherit" />
                 </IconButton>
-                23
+                {post.disLikeCount}
               </div>
               <div className='comShare' align='right'>
                 <IconButton aria-label="InsertComment" size="medium">

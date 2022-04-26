@@ -1,0 +1,12 @@
+.multitext {
+    background-image: linear-gradient(to left, 
+                    red,
+                    purple,
+                    lightgreen,
+                    pink,
+                    blue);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }

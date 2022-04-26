@@ -14,14 +14,15 @@
   margin-top: 15px;
   margin-bottom: 15px;
   width: auto;
-  max-width: 520px;
+  max-width: 500px;
   height: fit-content;
-  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px,
+  box-shadow: -65px 0px 40px -70px #000000, 62px 0px 40px -70px #000000,
+              rgba(240, 46, 170, 0.5) 0px 5px,
               rgba(240, 46, 170, 0.3) 0px 10px, 
-              rgba(240, 46, 170, 0.2) 0px 15px, 
+              rgba(240, 46, 170, 0.3) 0px 15px, 
               rgba(240, 46, 170, 0.1) 0px 20px, 
               rgba(240, 46, 170, 0.05) 0px 25px;
-  background-color: #40464f;
+  background-color: #3c4149;
 }
 
 .profilBox {
@@ -98,5 +99,5 @@
 }
 
 .share {
-  color: rgb(203, 54, 248);
+  color: rgb(217, 93, 245);
 }

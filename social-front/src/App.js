@@ -2,8 +2,8 @@ import * as React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from './pages/home/index'
-import ProfilePage from './pages/profile-page/index'
-import CommunityPage from './pages/community-page/index'
+import ProfilePage from './pages/profile/index'
+import CommunityPage from './pages/community/index'
 
 function App() {
 
@@ -11,8 +11,8 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/profile-page' element={<ProfilePage />}/>
-        <Route path='/community-page' element={<CommunityPage />}/>
+        <Route path='/profile' element={<ProfilePage />}/>
+        <Route path='/community' element={<CommunityPage />}/>
       </Routes>
     </Router>
   );

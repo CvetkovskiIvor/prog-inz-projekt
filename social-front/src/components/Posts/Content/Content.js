@@ -18,7 +18,6 @@ const ContentTemplate = ({post, setCurrentId}) => {
 
   return (
     <React.Fragment>
-      <CssBaseline />
       <Container className="qube">
         <Box className='box1' >
             <Box className='profilBox'>

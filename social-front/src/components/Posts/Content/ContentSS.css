@@ -82,11 +82,11 @@
 }
 
 .like {
-  color: rgb(26, 238, 26);
+  color: rgb(142, 141, 141);
 }
 
 .dislike {
-  color: rgb(232, 96, 162);
+  color: rgb(142, 141, 141);
 }
 
 .comShare {
@@ -94,9 +94,9 @@
 }
 
 .com {
-  color: rgb(217, 93, 245);
+  color: rgb(142, 141, 141);
 }
 
 .share {
-  color: rgb(217, 93, 245);
+  color: rgb(142, 141, 141);
 }

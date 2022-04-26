@@ -23,12 +23,15 @@ function App() {
      <Navbar/>
      <Grow in>
         <Container>
-          <Grid container justify="space-between" alignItems="stretch" spacing={3}>
-          <Grid item xs={12} sm={3}>
+          <Grid container justify="space-between" direction="row" alignItems="stretch" className="grid" spacing={3}>
+            <Grid item xs={12} sm={3}>
               <Form/>
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <Posts setCurrentId={setCurrentId}/>
+            <Grid item xs={12} sm={6} className="posts">
+              <Posts setCurrentId={setCurrentId} c/>
+            </Grid>
+            <Grid item xs={12} sm={3}>
+              <Form/>
             </Grid>
           </Grid>
         </Container>

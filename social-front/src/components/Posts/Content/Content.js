@@ -33,8 +33,8 @@ const ContentTemplate = ({post, setCurrentId}) => {
             <Typography  variant="subtitle1" component = "div" gutterBottom className='opis'>
               {post.message}
             </Typography>
-            <div className='media'>
-              <img src="https://1.bp.blogspot.com/-fHc57YnEWSg/VUpggYd6KCI/AAAAAAAApgA/HJkBhsejNIw/s1600/MordekaiserLoadScreen_5.png" className='slika' alt="Ako postoji slika ili video" />
+              <div className='media'>
+                <img src="https://1.bp.blogspot.com/-fHc57YnEWSg/VUpggYd6KCI/AAAAAAAApgA/HJkBhsejNIw/s1600/MordekaiserLoadScreen_5.png" className='slika' alt="Ako postoji slika ili video" />
               </div>
             <div className="allIcons">
               <div className='likedislike' >

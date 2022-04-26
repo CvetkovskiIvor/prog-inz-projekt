@@ -92,7 +92,7 @@ export default function Navbar() {
               <Avatar
               src="https://dbdzm869oupei.cloudfront.net/img/alfombretaratoli/preview/40906.png"
               sx={{ width: 55, height: 55}}
-              onclick = {handleClose}
+              onClick = {handleClose}
               />
               <Search>
                 <SearchIconWrapper>
@@ -103,7 +103,7 @@ export default function Navbar() {
                   inputProps={{ 'aria-label': 'search' }}
                 />
               </Search>
-              <Typography variant="h5" component="div" className="multitext" align = "center" sx={{ flexGrow: 1, fontFamily: "Fantasy", fontSize: 28, paddingRight: 22}}
+              <Typography variant="h5" component="div" className="multitext" align = "center" sx={{ flexGrow: 1, fontFamily: "Fantasy", marginLeft: 48, position: "-webkit-sticky", fontSize: 28, marginRight: 70}}
               >Game Times
               </Typography>
               <Button color="inherit" sx={{fontSize: 15, fontFamily: "fantasy"}} onClick={toggleSignUp}>Sign up</Button>

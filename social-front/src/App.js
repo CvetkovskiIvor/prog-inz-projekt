@@ -10,9 +10,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home />}/>
+        {/*<Route path='/' element={<Home />}/>*/}
         <Route path='/profile-page' element={<ProfilePage />}/>
-        <Route path='/community-page' element={<CommunityPage />}/>
+        <Route path='/' element={<CommunityPage />}/> {/*pisalo je communityb-page*/}
       </Routes>
     </Router>
   );

@@ -21,7 +21,7 @@ const ContentTemplate = ({post, setCurrentId}) => {
       <Container className="qube">
         <Box className='box1'>
           <Box className='profilBox'>
-            <Avatar alt="Profile pic" className='profpic'src="https://static.senpai.gg/lol/img/champion/tiles/Lux_0.webp" />
+            <Avatar alt="Profile pic" className='profpic'src={post.profilePicture} />
             <p className='ime'>
               {post.creator} 
             </p>
@@ -39,20 +39,20 @@ const ContentTemplate = ({post, setCurrentId}) => {
           <div className="allIcons">
             <div className='likedislike' >
               <IconButton aria-label="VideogameAsset" size="medium" onClick={() => dispatch(likePost(post._id))}>
-                <VideogameAssetIcon className='like' fontSize="inherit" />
+                <VideogameAssetIcon className='like' sx={{ "&:hover": { color: "rgb(26, 238, 26)" } }} fontSize="inherit" />
               </IconButton>
               {post.likeCount}
               <IconButton aria-label="VideogameAssetOff" size="medium" onClick={() => dispatch(disLikePost(post._id))}>
-                <VideogameAssetOffIcon className='dislike' fontSize="inherit" />
+                <VideogameAssetOffIcon className='dislike' sx={{ "&:hover": { color: "rgb(232, 96, 162)" } }} fontSize="inherit" />
               </IconButton>
               {post.disLikeCount}
             </div>
             <div className='comShare' align='right'>
               <IconButton aria-label="InsertComment" size="medium">
-                <InsertCommentIcon className='com' fontSize="inherit"/>
+                <InsertCommentIcon className='com' sx={{ "&:hover": { color: "rgb(217, 93, 245)" } }} fontSize="inherit"/>
               </IconButton>
               <IconButton aria-label="Share" size="medium">
-                <ShareIcon className='share' fontSize="inherit"/>
+                <ShareIcon className='share' sx={{ "&:hover": { color: "rgb(217, 93, 245)" } }} fontSize="inherit"/>
               </IconButton>
             </div>
           </div>

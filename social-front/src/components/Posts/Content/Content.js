@@ -21,7 +21,7 @@ const ContentTemplate = ({post, setCurrentId}) => {
       <Container className="qube">
         <Box className='box1'>
           <Box className='profilBox'>
-            <Avatar alt="Profile pic" className='profpic'src="https://static.senpai.gg/lol/img/champion/tiles/Lux_0.webp" />
+            <Avatar alt="Profile pic" className='profpic'src={post.profilePicture} />
             <p className='ime'>
               {post.creator} 
             </p>

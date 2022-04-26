@@ -30,14 +30,15 @@ const handleSubmit = (e) => {
 }
 const clear = () => {
     setCurrentId(0);
-    setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+    setPostData({ profilePicture: '', creator: '', title: '', message: '', tags: '', selectedFile: '' });
   };
 
 return (
 <Container component="main" maxWidth="xs" align="right">
 <Paper>
     <form  autoComplete='off' noValidate  onSubmit={handleSubmit}>
-        <Typography variant="h6">Creating a Post</Typography>
+        <Typography align="left" variant="h6">Creating a Post</Typography>
+        <div><FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, profilePicture: base64 })} /></div>
         <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({...postData, creator: e.target.value})}/>
         <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
         <TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />

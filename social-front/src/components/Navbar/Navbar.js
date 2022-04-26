@@ -84,7 +84,7 @@ export default function Navbar() {
         setIsSignedUp((prevIsSignedUp)=> !prevIsSignedUp);
       }
     return (
-        <div>
+        <div className='navBar'>
           
           <Box sx={{ flexGrow: 1}}>
           <AppBar position="static" sx = {{bgcolor: "#2C2F33"}}>

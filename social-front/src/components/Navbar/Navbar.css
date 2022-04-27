@@ -2,8 +2,8 @@
     background-image: linear-gradient(to left, 
                     red,
                     purple,
-                    lightgreen,
-                    pink,
+                    
+                    rgb(225, 10, 240),
                     blue);
     -webkit-background-clip: text;
     -moz-background-clip: text;

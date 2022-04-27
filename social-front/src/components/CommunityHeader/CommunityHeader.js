@@ -256,8 +256,6 @@ export default function LabTabs() {
         </Box>
         <TabPanel value="1" sx={stil_home}>
           {Home_options()}
-          <Profile/>
-          <Content/>
           Add More options
         </TabPanel>
         <TabPanel value="2">

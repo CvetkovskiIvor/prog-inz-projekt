@@ -21,7 +21,7 @@ function App() {
       <Navbar/>
       <Grow in>
         <Container>
-         IDE GASCINA UEEEE 
+          <CommunityHeader />
         </Container>
       </Grow>
     </div>

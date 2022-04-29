@@ -1,0 +1,35 @@
+.stil_ljudi  {
+    float: right;
+    margin-right: 10%;
+  }
+
+.stil_member_info  {
+    width: 70%;
+    float: left;
+  }
+
+.stil_home {
+
+    text-align: center;
+  }
+
+.stil_info  {
+    text-align: center;
+  }
+
+.stil_members{
+    /*dodat ce se*/
+}
+
+.stil_tab1{
+    color: whitesmoke;
+}
+.stil_tab2{
+    color: whitesmoke;
+}
+.stil_tab3{
+    color: whitesmoke;
+}
+
+
+

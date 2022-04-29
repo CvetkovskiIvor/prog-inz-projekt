@@ -7,78 +7,22 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
-import Stack from '@mui/material/Stack';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/material/styles';
-import Content from '../Posts/Content/Content';
-import Profile from '../Profile/Profile';
+import Content from '../Posts/Content/Content'; // koristit ce se kasnije
+import Profile from '../Profile/Profile';  // koristit ce se kasnije
+import Header from '../CommunityPage/CommunityHead/Header'
+import './ComPage.css'
 
 
 
-export default function LabTabs() {
+export default function Commun() {
   //constants
-  const stil_ljudi={
-    float: "right"
-  };
-  const stil_member_info={
-    width: "70%",
-    float: "left"
-  };
-
-  const stil_home={
-    // dodavat stil za home
-    textAlign:"center",
-  }
-
-  const stil_info={
-    textAlign:"center",
-  }
-
-  const stil_ime={
-    marginLeft: "200px",
-    marginTop: "-70px",
-    float: "left",
-    color: "gray",
-    textDecoration: "underline"
-  }
-
-  const stil_podnaslov={
-    marginLeft: "200px",
-    marginTop: "-50px",
-    float: "left",
-    color: "#D3D3D3"
-  }
-
-  const stil_banner={
-    width: "auto", 
-    height: "200px",
-    border: "solid grey", 
-    padding: "50px", 
-    background: "#D3D3D3",
-    textAlign:"center",
-   
-  };
-
-  const stil_content_profile={
-    background: "gray",
-    width: "150px",
-    height: "150px",
-    borderRadius: "50%",
-    border: "solid #D3D3D3",
-    marginTop: "-100px",
-    marginLeft: "20px",
-    textAlign:"center",
-  };
-
-  const stil_content_banner={
-    //trenutno nepotrebno
-  };
+ 
 
   const Input = styled('input')({
     display: 'none',
@@ -97,7 +41,7 @@ export default function LabTabs() {
 
   function members_information(){
     return(
-      <div class="ModeratorAndUsers" style={stil_member_info}>
+      <div className="ModeratorAndUsers" class = 'stil_member_info'>
       <Accordion expanded={expanded === 'panel1'} onChange={handleChangeMemeber('panel1')}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -169,18 +113,7 @@ export default function LabTabs() {
     );
   }
   
-  function add_upload(){  
-    return(
-      <Stack>
-      <label htmlFor="icon-button-file">
-        <Input accept="image/*" id="icon-button-file" type="file" />
-        <IconButton color="primary" aria-label="upload picture" component="span">
-          <PhotoCamera />
-        </IconButton>
-      </label>
-    </Stack>
-    );
-  }
+ 
 
   function save_button(){
     return (
@@ -190,17 +123,11 @@ export default function LabTabs() {
     );
   }
 
-  function banner_place(){
-    return(
-      <Box sx={stil_banner}>
-          {add_upload()}        
-      </Box>
-    );
-  }
+ 
 
   function ljudi(){
     return (
-        <div style={stil_ljudi}>
+        <div className='stil_ljudi'>
           <h2>Currently Online:</h2><br/>
             
         <AvatarGroup total={24}>
@@ -229,7 +156,7 @@ export default function LabTabs() {
       <>
       Add Your information about the page below...<br/>
       <form>
-        <textarea style={{width: "100%", height: "300px", border: "none" }} placeholder="Enter text here..."/><br/>
+        <textarea style={{width: "100%", height: "300px", border: "none", backgroundColor: "lightgray"}} placeholder="Enter text here..."/><br/>
       </form>
       {save_button()}
       </>
@@ -240,29 +167,26 @@ export default function LabTabs() {
  // finalni export
   return (
     <>
-    <div class = "content_banner" style={stil_content_banner}>{banner_place()}</div><br/><br/>
-    <div class = "content_profile" style={stil_content_profile}>{add_upload()}</div>
-    <h1 style={stil_ime}>Ime stranice</h1><br/>
-    <p style={stil_podnaslov}>skraceno</p>
+    <Header/>
 
-    <Box sx={{ width: '100%', typography: 'body1' }}>
-      <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Home" value="1" />
-            <Tab label="Members" value="2" />
-            <Tab label="About" value="3" />
+    <Box sx={{ width: '100%', typography: 'body1'}}>
+      <TabContext value={value} color="gray">
+        <Box sx={{borderColor: 'divider', boxShadow: 1}}>
+          <TabList onChange={handleChange} sx={{bgcolor:'rgb(54, 53, 53)'}}>
+            <Tab label="Home" value="1" className='stil_tab1'/>
+            <Tab label="Members" value="2" className='stil_tab2'/>
+            <Tab label="About" value="3" className='stil_tab3'/>
           </TabList>
         </Box>
-        <TabPanel value="1" sx={stil_home}>
-          {Home_options()}
+        <TabPanel value="1" className = 'stil_home'>
+          {Home_options()}<br/><br/>
           Add More options
         </TabPanel>
-        <TabPanel value="2">
+        <TabPanel value="2" className='stil_members'>
           {ljudi()}
           {members_information()}
         </TabPanel>
-        <TabPanel value="3"sx={stil_info}>
+        <TabPanel value="3" className = 'stil_info'>
           {about_info()}
         </TabPanel>
       </TabContext>

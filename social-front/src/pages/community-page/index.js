@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Container from '@mui/material/Container';
 import { Grow } from '@mui/material';
 import Navbar from '../../components/Navbar/Navbar';
-import CommunityHeader from '../../components/CommunityHeader/CommunityHeader'
+import CommunityHeader from '../../components/CommunityPage/CommunityHeader'
 import {useDispatch} from 'react-redux';
 import {getPosts} from '../../actions/posts'; 
 
@@ -17,14 +17,9 @@ function App() {
   },[currentId,dispatch]);
 
   return (
-    <div>
-      <Navbar/>
-      <Grow in>
-        <Container>
+    
           <CommunityHeader />
-        </Container>
-      </Grow>
-    </div>
+        
   );
 };
 

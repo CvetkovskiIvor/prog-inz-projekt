@@ -42,7 +42,7 @@ export default function Commun() {
   function members_information(){
     return(
       <div className="ModeratorAndUsers" class = 'stil_member_info'>
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChangeMemeber('panel1')}>
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChangeMemeber('panel1')} sx={{color: 'gray', bgcolor: 'rgb(54, 53, 53)'}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1bh-content"
@@ -51,32 +51,32 @@ export default function Commun() {
           <Typography sx={{ width: '33%', flexShrink: 0 }}>
           Moderators
           </Typography>
-          <Typography sx={{ color: 'text.secondary' }}>...and mails...</Typography>
+          <Typography sx={{ color: 'gray' }}>...and mails...</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ color: 'lightgray' }}>
             Quiccky300(quicc@gmail.com), Altimus69(succc@gmail.com), _blackSack_(giginigi@hotmail.com), Minecraft_boy123(dirtblocc@gmail.com)
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChangeMemeber('panel2')}>
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChangeMemeber('panel2')} sx={{color: 'gray', bgcolor: 'rgb(54, 53, 53)'}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Top Users</Typography>
-          <Typography sx={{ color: 'text.secondary' }}>
+          <Typography sx={{ width: '33%', flexShrink: 0, color: 'gray' }}>Top Users</Typography>
+          <Typography sx={{ color: 'gray' }}>
             Our most beloved users 
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ color: 'lightgray' }}>
           BananaSplit1991, Make14Ra1n, Gun444MM,.....
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChangeMemeber('panel3')}>
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChangeMemeber('panel3')} sx={{color: 'gray', bgcolor: 'rgb(54, 53, 53)'}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3bh-content"
@@ -85,17 +85,17 @@ export default function Commun() {
           <Typography sx={{ width: '33%', flexShrink: 0 }}>
             User rules
           </Typography>
-          <Typography sx={{ color: 'text.secondary' }}>
+          <Typography sx={{ color: 'gray' }}>
             Filtering has been entirely disabled for whole web server
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{color: 'lightgray'}}>
             Add more rules.....
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expanded === 'panel4'} onChange={handleChangeMemeber('panel4')}>
+      <Accordion expanded={expanded === 'panel4'} onChange={handleChangeMemeber('panel4')} sx={{color: 'gray', bgcolor: 'rgb(54, 53, 53)'}} >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel4bh-content"
@@ -104,7 +104,7 @@ export default function Commun() {
           <Typography sx={{ width: '33%', flexShrink: 0 }}>Patreons</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{color: 'lightgray'}}>
             Add those who contribute with more than just the posts and content...
           </Typography>
         </AccordionDetails>
@@ -170,12 +170,12 @@ export default function Commun() {
     <Header/>
 
     <Box sx={{ width: '100%', typography: 'body1'}}>
-      <TabContext value={value} color="gray">
+      <TabContext value={value}>
         <Box sx={{borderColor: 'divider', boxShadow: 1}}>
-          <TabList onChange={handleChange} sx={{bgcolor:'rgb(54, 53, 53)'}}>
-            <Tab label="Home" value="1" className='stil_tab1'/>
-            <Tab label="Members" value="2" className='stil_tab2'/>
-            <Tab label="About" value="3" className='stil_tab3'/>
+          <TabList onChange={handleChange} sx={{bgcolor:'rgb(54, 53, 53)'}} >
+            <Tab label="Home" value="1" sx={{color:'whitesmoke'}}/>
+            <Tab label="Members" value="2" sx={{color:'whitesmoke'}}/>
+            <Tab label="About" value="3" sx={{color:'whitesmoke'}}/>
           </TabList>
         </Box>
         <TabPanel value="1" className = 'stil_home'>

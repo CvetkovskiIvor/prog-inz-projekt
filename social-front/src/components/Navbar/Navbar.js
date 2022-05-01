@@ -87,7 +87,7 @@ export default function Navbar() {
         <div className='navBar'>
           
           <Box sx={{ flexGrow: 1}}>
-          <AppBar position="static" sx = {{bgcolor: "#2C2F33"}}>
+          <AppBar position="fixed" sx = {{bgcolor: "#2C2F33"}}>
             <Toolbar>
               <Avatar
               src="https://dbdzm869oupei.cloudfront.net/img/alfombretaratoli/preview/40906.png"
@@ -103,7 +103,7 @@ export default function Navbar() {
                   inputProps={{ 'aria-label': 'search' }}
                 />
               </Search>
-              <Typography variant="h5" component="div" className="multitext" align = "center" sx={{ flexGrow: 1, fontFamily: "Fantasy", marginLeft: 48, position: "-webkit-sticky", fontSize: 28, marginRight: 70}}
+              <Typography variant="h5" component="div" className="multitext" align = "center" sx={{ flexGrow: 1, fontFamily: "Fantasy", marginLeft: 48, fontSize: 28, marginRight: 70}}
               >Game Times
               </Typography>
               <Button color="inherit" sx={{fontSize: 15, fontFamily: "fantasy"}} onClick={toggleSignUp}>Sign up</Button>

@@ -17,9 +17,10 @@ function App() {
   },[currentId,dispatch]);
 
   return (
-    
-          <CommunityHeader />
-        
+    <>
+      <Navbar/>
+      <CommunityHeader />
+    </>
   );
 };
 

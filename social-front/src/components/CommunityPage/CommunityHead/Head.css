@@ -9,6 +9,10 @@
     text-align: center;
   }
 
+ .stil_follow{
+    margin-left:50px;
+    background: rgb(80, 79, 79);
+ }
 
   .stil_back{
       background-color: gray;

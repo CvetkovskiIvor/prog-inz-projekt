@@ -17,5 +17,12 @@
     text-align: center;
   }
 
-
+.stil_sidebar {
+  width: 20%;
+  height: 100%;
+  position: fixed;
+  background-color: rgb(54, 53, 53);
+  margin-left: 80%;
+  
+}
 

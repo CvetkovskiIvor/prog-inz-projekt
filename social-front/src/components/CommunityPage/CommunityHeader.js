@@ -17,6 +17,7 @@ import Content from '../Posts/Content/Content'; // koristit ce se kasnije
 import Profile from '../Profile/Profile';  // koristit ce se kasnije
 import Header from '../CommunityPage/CommunityHead/Header'
 import './ComPage.css'
+import zIndex from '@mui/material/styles/zIndex';
 
 
 
@@ -117,7 +118,7 @@ export default function Commun() {
 
   function save_button(){
     return (
-      <Box component="span" sx={{p: 1, border: '1px solid grey'}}>
+      <Box component="span" sx={{p: 1, border: '1px solid grey', background:'rgb(80, 79, 79)'}}>
         <Button >Save</Button>
       </Box>
     );
@@ -168,8 +169,7 @@ export default function Commun() {
   return (
     <>
     <Header/>
-
-    <Box sx={{ width: '100%', typography: 'body1'}}>
+    <Box sx={{ width: '80%', typography: 'body1', float: 'left',borderRadius: '1 2'}}>
       <TabContext value={value}>
         <Box sx={{borderColor: 'divider', boxShadow: 1}}>
           <TabList onChange={handleChange} sx={{bgcolor:'rgb(54, 53, 53)'}} >
@@ -190,6 +190,9 @@ export default function Commun() {
           {about_info()}
         </TabPanel>
       </TabContext>
+    </Box>
+    <Box className='stil_sidebar'>
+
     </Box>
     </>
   );

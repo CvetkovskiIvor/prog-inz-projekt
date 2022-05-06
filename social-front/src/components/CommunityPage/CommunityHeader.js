@@ -16,6 +16,7 @@ import { styled } from '@mui/material/styles';
 import Content from '../Posts/Content/Content'; // koristit ce se kasnije
 import Profile from '../Profile/Profile';  // koristit ce se kasnije
 import Header from '../CommunityPage/CommunityHead/Header'
+import Posts from '../Posts/Posts';
 import './ComPage.css'
 import zIndex from '@mui/material/styles/zIndex';
 
@@ -43,7 +44,7 @@ export default function Commun() {
   function members_information(){
     return(
       <div className="ModeratorAndUsers" class = 'stil_member_info'>
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChangeMemeber('panel1')} sx={{color: 'gray', bgcolor: 'rgb(54, 53, 53)'}}>
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChangeMemeber('panel1')} sx={{color: 'gray', bgcolor: '#2C2F33'}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1bh-content"
@@ -60,7 +61,7 @@ export default function Commun() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChangeMemeber('panel2')} sx={{color: 'gray', bgcolor: 'rgb(54, 53, 53)'}}>
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChangeMemeber('panel2')} sx={{color: 'gray', bgcolor: '#2C2F33'}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2bh-content"
@@ -77,7 +78,7 @@ export default function Commun() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expanded === 'panel3'} onChange={handleChangeMemeber('panel3')} sx={{color: 'gray', bgcolor: 'rgb(54, 53, 53)'}}>
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChangeMemeber('panel3')} sx={{color: 'gray', bgcolor: '#2C2F33'}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3bh-content"
@@ -96,7 +97,7 @@ export default function Commun() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion expanded={expanded === 'panel4'} onChange={handleChangeMemeber('panel4')} sx={{color: 'gray', bgcolor: 'rgb(54, 53, 53)'}} >
+      <Accordion expanded={expanded === 'panel4'} onChange={handleChangeMemeber('panel4')} sx={{color: 'gray', bgcolor: '#2C2F33'}} >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel4bh-content"
@@ -118,7 +119,7 @@ export default function Commun() {
 
   function save_button(){
     return (
-      <Box component="span" sx={{p: 1, border: '1px solid grey', background:'rgb(80, 79, 79)'}}>
+      <Box component="span" sx={{p: 1, border: '1px solid grey', background:'#2C2F33'}}>
         <Button >Save</Button>
       </Box>
     );
@@ -168,11 +169,12 @@ export default function Commun() {
  // finalni export
   return (
     <>
+    <body>
     <Header/>
-    <Box sx={{ width: '80%', typography: 'body1', float: 'left',borderRadius: '1 2'}}>
+    <Box sx={{ width: '85%', typography: 'body1', float: 'left'}}>
       <TabContext value={value}>
         <Box sx={{borderColor: 'divider', boxShadow: 1}}>
-          <TabList onChange={handleChange} sx={{bgcolor:'rgb(54, 53, 53)'}} >
+          <TabList onChange={handleChange} sx={{bgcolor:'#2C2F33'}} >
             <Tab label="Home" value="1" sx={{color:'whitesmoke'}}/>
             <Tab label="Members" value="2" sx={{color:'whitesmoke'}}/>
             <Tab label="About" value="3" sx={{color:'whitesmoke'}}/>
@@ -180,7 +182,7 @@ export default function Commun() {
         </Box>
         <TabPanel value="1" className = 'stil_home'>
           {Home_options()}<br/><br/>
-          Add More options
+          {/*mergat granu pa dodat posts */}
         </TabPanel>
         <TabPanel value="2" className='stil_members'>
           {ljudi()}
@@ -192,8 +194,8 @@ export default function Commun() {
       </TabContext>
     </Box>
     <Box className='stil_sidebar'>
-
     </Box>
+    </body>
     </>
   );
 

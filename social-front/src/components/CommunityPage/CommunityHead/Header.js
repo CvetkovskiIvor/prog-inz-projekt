@@ -24,9 +24,7 @@ const Input = styled('input')({
   
   function follow_button(){
     return (
-      <Box component="span" sx={{p: 0.5, border: '1px solid grey'}} className='stil_follow'>
-        <Button >Follow</Button>
-      </Box>
+        <div class='stil_follow'><Button>Follow</Button></div>
     );
   }
 
@@ -46,12 +44,14 @@ const Input = styled('input')({
 
 export default function Header(){
     return(
+      <>
       <div class='stil_back'>
       <div class='stil_content_banner'>{banner_place()}</div><br/><br/>
       <div class='stil_content_profile'>{add_upload()}</div>
       <h1 class='stil_ime'>Ime stranice</h1><br/>
       <p class='stil_podnaslov'>skraceno</p>
-      <div class='stil_button'>{follow_button()}</div>
       </div>
+      {follow_button()}
+      </>
     );
   }

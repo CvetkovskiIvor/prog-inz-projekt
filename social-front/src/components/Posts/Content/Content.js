@@ -23,7 +23,7 @@ const ContentTemplate = ({post, setCurrentId}) => {
           <Box className='profilBox'>
             <Avatar alt="Profile pic" className='profpic'src={post.profilePicture} />
             <p className='ime'>
-              {post.creator} 
+              {post.name} 
             </p>
           </Box>
           <Typography  variant="h5" component = "div" gutterBottom className='naslov'>
@@ -38,10 +38,10 @@ const ContentTemplate = ({post, setCurrentId}) => {
           </div>
           <div className="allIcons">
             <div className='likedislike' >
-              <IconButton aria-label="VideogameAsset" size="medium" onClick={() => dispatch(likePost(post._id))}>
+              <IconButton aria-label="VideogameAsset" disabled={!user?.result} size="medium" onClick={() => dispatch(likePost(post._id))}>
                 <VideogameAssetIcon className='like' sx={{ "&:hover": { color: "rgb(26, 238, 26)" } }} fontSize="inherit" />
               </IconButton>
-              {post.likeCount}
+              {/* post.likes*/ } {post.likeCount} 
               <IconButton aria-label="VideogameAssetOff" size="medium" onClick={() => dispatch(disLikePost(post._id))}>
                 <VideogameAssetOffIcon className='dislike' sx={{ "&:hover": { color: "rgb(232, 96, 162)" } }} fontSize="inherit" />
               </IconButton>

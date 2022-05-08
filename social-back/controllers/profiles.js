@@ -1,9 +1,9 @@
 import Profile from "../models/profile.js";
 import bcrypt from 'bcrypt.js';
 import jwt from 'jsonwebtoken';
-// Provjerit routes i index.js
-// Napraviti actions
-// Promjeniti ili moongo schemu ili sign up formu
+// Promjeniti sign up formu
+// Završiti sing in i sign up formu
+// Napraviti api i likes u content.js
 
 export const getProfiles = async (req, res) => {
   try {

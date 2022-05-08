@@ -15,3 +15,6 @@ export const createProfile = (newProfile) => axios.post(profileUrl, newProfile);
 
 export const fetchCommunities = () => axios.get(communityUrl);
 export const createCommunity = (newCommunity) => axios.post(communityUrl, newCommunity);
+
+export const singIn = (formData) => axios.post(`${postUrl}/signin`, formData);
+export const singUp = (formData) => axios.post(`${postUrl}/signup`, formData);

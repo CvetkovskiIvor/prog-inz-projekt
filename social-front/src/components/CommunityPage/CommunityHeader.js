@@ -13,10 +13,9 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/material/styles';
-import Content from '../Posts/Content/Content'; // koristit ce se kasnije
 import Profile from '../Profile/Profile';  // koristit ce se kasnije
 import Header from '../CommunityPage/CommunityHead/Header'
-import Posts from '../Posts/Posts';
+import Posts from '../Posts/Posts';  // koristit ce se kasnije
 import './ComPage.css'
 import zIndex from '@mui/material/styles/zIndex';
 

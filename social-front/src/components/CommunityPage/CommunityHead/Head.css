@@ -1,5 +1,7 @@
 .stil_content_profile {
     background: #2C2F33;
+    background-position: center;
+    background-size:auto;
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -8,6 +10,16 @@
     margin-left: 20px;
     text-align: center;
   }
+
+.stil_content_banner{
+  width: auto; 
+  height: 300px;
+  border: solid rgb(54, 53, 53); 
+  background:  gray;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+}
 
  .stil_follow{
   margin-left: 21%;
@@ -33,13 +45,4 @@
     margin-top: -50px;
     float: left;
     color: #D3D3D3;
-  }
-
-  .stil_banner {
-    width: auto; 
-    height: 200px;
-    border: solid rgb(54, 53, 53); 
-    padding: 50px;
-    background:  gray;
-    text-align: center;
   }

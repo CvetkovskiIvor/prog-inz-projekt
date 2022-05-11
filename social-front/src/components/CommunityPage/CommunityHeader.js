@@ -19,8 +19,6 @@ import Posts from '../Posts/Posts';  // koristit ce se kasnije
 import './ComPage.css'
 import zIndex from '@mui/material/styles/zIndex';
 
-
-
 export default function Commun() {
   //constants
  
@@ -143,12 +141,15 @@ export default function Commun() {
 
   function Home_options(){
     return(
+      <>
       <label htmlFor="contained-button-file">
           <Input accept="image/*" id="contained-button-file" multiple type="file" />
           <Button variant="contained" component="span">
           Upload
           </Button>
       </label>
+      
+      </>
     );
   }
 

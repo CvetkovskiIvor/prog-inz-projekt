@@ -28,5 +28,17 @@
 body{
   background-image: url("backgroundRework.jpg");
   background-color: gray;
+  background-repeat: repeat;
+}
+
+.test_za_sliku{
+  background: #2C2F33;
+    background-position: center;
+    background-size: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid rgb(54, 53, 53);
+    text-align: center;
 }
 

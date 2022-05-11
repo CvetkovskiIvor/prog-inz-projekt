@@ -6,39 +6,36 @@ import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import Button from '@mui/material/Button';
 import './Head.css'
 
-
 const Input = styled('input')({
     display: 'none',
 });
 
-
-
  function banner_place(){
     return(
-      <Box className='stil_banner'>
-        <Stack>
-          <label htmlFor="icon-button-banner">
-            <Input accept="image/*" id="icon-button-banner" type="file" onClick={SetImmageBanner}/>
-          <IconButton color="primary" aria-label="upload picture" component="span">
-            <PhotoCamera />
-          </IconButton>
-          </label>
-        </Stack>       
+      <Box>
+      <Stack>
+      <label htmlFor="icon-button-banner">
+        <Input accept="image/*" id="icon-button-banner" type="file" onClick={SetImmageBanner}/>
+        <IconButton color="primary" aria-label="upload picture" component="span">
+          <PhotoCamera />
+        </IconButton>
+      </label>
+      </Stack>
       </Box>
     );
   }
 
   function profile_place(){
     return(
-      <Box className='stil_profile'>
-        <Stack>
-          <label htmlFor="icon-button-profile">
-            <Input accept="image/*" id="icon-button-profile" type="file" /> {/*onClick={SetImmageProfile()}, CRASHA MI JEBENU STRANICU KAD SE KLIKNE F5*/} 
+      <Box>
+      <Stack>
+      <label htmlFor="icon-button-profile">
+        <Input accept="image/*" id="icon-button-profile" type="file" onClick={SetImmageProfile}/> 
         <IconButton color="primary" aria-label="upload picture" component="span">
           <PhotoCamera />
         </IconButton>
-          </label>
-        </Stack>
+      </label>
+      </Stack>
       </Box>
     );
   }
@@ -57,9 +54,9 @@ const Input = styled('input')({
         const reader = new FileReader();
         reader.addEventListener("load", () => {
           const upload_image = reader.result;
-          document.querySelector(".stil_content_profile").style.backgroundImage=`url(${upload_image})`;
+          document.querySelector(".stil_content_profile").style.backgroundImage=`url(`+ upload_image +`)`;
         });
-        reader.readAsDataURL(this.files[0]);
+          reader.readAsDataURL(this.files[0]);
       });  
 
     }
@@ -73,7 +70,10 @@ const Input = styled('input')({
             const upload_image_ban = reader_ban.result;
             document.querySelector(".stil_content_banner").style.backgroundImage=`url(${upload_image_ban})`;
         });
-        reader_ban.readAsDataURL(this.files[0]);
+        if(this.files[0]){
+          reader_ban.readAsDataURL(this.files[0]);
+        }
+        
       });
     }
 

@@ -1,13 +1,10 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { Grow } from '@mui/material';
+import Box from '@mui/material/Box';
 import Navbar from '../../components/Navbar/Navbar';
-import CommunityHeader from '../../components/CommunityHeader/CommunityHeader';
 import {useDispatch} from 'react-redux';
-import Form from '../../components/Form/Form';
-import Posts from '../../components/Posts/Posts';
 import {getPosts} from '../../actions/posts'; 
 
 
@@ -23,9 +20,9 @@ function App() {
     <div>
      <Navbar/>
      <Grow in>
-        <Container>
-         IDE GASCINA NA MAKSCINA!=!==!=! 
-        </Container>
+        <Box bgcolor={'#1E2124'}>
+          IDE GASCINA NA MAKSCINA!=!==!=! 
+        </Box>
       </Grow>
     </div>
   );

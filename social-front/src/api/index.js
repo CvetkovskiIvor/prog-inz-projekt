@@ -4,8 +4,9 @@ const postUrl = `http://${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PO
 const profileUrl = `http://${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/profiles`;
 const communityUrl = `http://${process.env.REACT_APP_HOST}:${process.env.REACT_APP_PORT}/communities`;
 
+//const API = axios.create({baseURL: 'http://localhost:5000'});
 
-export const fetchPosts = () => axios.get(postUrl);
+export const fetchPosts = () => axios.get(postUrl); //API.get('/posts');
 export const createPost = (newPost) => axios.post(postUrl, newPost);
 export const likePost = (id) => axios.patch(`${postUrl}/${id}/likePost`);
 export const disLikePost = (id) => axios.patch(`${postUrl}/${id}/disLikePost`);

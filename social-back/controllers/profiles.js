@@ -1,9 +1,9 @@
 import Profile from "../models/profile.js";
 import bcrypt from 'bcrypt.js';
 import jwt from 'jsonwebtoken';
-// Promjeniti sign up formu
 // Završiti sing in i sign up formu
 // Napraviti api i likes u content.js
+//provjerit mongodb shemu(Odkomentirati likes i dislikes)
 
 export const getProfiles = async (req, res) => {
   try {
@@ -51,7 +51,7 @@ export const signin = async(req, res) => {
 }
 
 export const signup = async(req, res) =>{
-  const {email, password, firstName, lastName } = req.body;
+  const {email, password, username} = req.body;
 
     try{
       const existingUser = await User.findOne({email});
@@ -59,7 +59,7 @@ export const signup = async(req, res) =>{
 
       const hashedPassword = await bcrypt.hash(password, 12);
 
-      const result = await User.create({email, password: hashedPassword, name: `${firstName} ${lastName}`});
+      const result = await User.create({email, password: hashedPassword, username});
       const token = jwt.sign({email:result.email, id: result._id}, 'test',{expiresIn: "1h"});
       res.status(200).json({result: result,token});
 

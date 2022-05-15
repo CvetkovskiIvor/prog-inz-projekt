@@ -9,6 +9,13 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {signin, signup} from '../../actions/auth';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+
+
+const initialState = {username: '', email: '', password: '' };
+
 
 function Copyright(props) {
   return (
@@ -26,13 +33,16 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+  const dispatch = useDispatch();
+
+  const [formData, setFormData] = useState(initialState);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(signin(formData));
+  };
+
+  const handleChange = (e) =>{
+    setFormData({...formData, [e.target.name]: e.target.value});
   };
 
   return (
@@ -57,6 +67,7 @@ export default function SignIn() {
             <TextField
               margin="normal"
               required
+              handleChange={handleChange}
               fullWidth
               id="email"
               label="Email Address"
@@ -67,6 +78,7 @@ export default function SignIn() {
             <TextField
               margin="normal"
               required
+              handleChange={handleChange}
               fullWidth
               name="password"
               label="Password"
@@ -74,10 +86,6 @@ export default function SignIn() {
               id="password"
               autoComplete="current-password"
             />
-         {/*}   <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-        />*/}
             <Button
               type="submit"
               fullWidth

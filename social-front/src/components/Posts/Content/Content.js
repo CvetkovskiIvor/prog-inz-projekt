@@ -15,6 +15,35 @@ import './ContentSS.css';
 
 const ContentTemplate = ({post, setCurrentId}) => {
   const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem('profile'));
+
+
+  
+// const Likes = () => {
+//   if (post.likes.length > 0) {
+//     return post.likes.find((like) => like === (user?.result?._id))
+//       ? (
+//         <><ThumbUpAltIcon fontSize="small" />&nbsp;{post.likes.length > 2 ? `You and ${post.likes.length - 1} others` : `${post.likes.length} like${post.likes.length > 1 ? 's' : ''}` }</>
+//       ) : (
+//         <><ThumbUpAltOutlined fontSize="small" />&nbsp;{post.likes.length} {post.likes.length === 1 ? 'Like' : 'Likes'}</>
+//       );
+//   }
+
+//   return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
+// };
+
+// const disLikes = () => {
+//   if (post.dislikes.length > 0) {
+//     return post.dislikes.find((dislike) => dislike === (user?.result?._id))
+//       ? (
+//         <><ThumbUpAltIcon fontSize="small" />&nbsp;{post.dislikes.length > 2 ? `You and ${post.dislikes.length - 1} others` : `${post.dislikes.length} like${post.dislikes.length > 1 ? 's' : ''}` }</>
+//       ) : (
+//         <><ThumbUpAltOutlined fontSize="small" />&nbsp;{post.dislikes.length} {post.dislikes.length === 1 ? 'Dislike' : 'Dislikes'}</>
+//       );
+//   }
+
+//   return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Dislike</>;
+// };
 
   return (
     <React.Fragment>
@@ -41,11 +70,11 @@ const ContentTemplate = ({post, setCurrentId}) => {
               <IconButton aria-label="VideogameAsset" disabled={!user?.result} size="medium" onClick={() => dispatch(likePost(post._id))}>
                 <VideogameAssetIcon className='like' sx={{ "&:hover": { color: "rgb(26, 238, 26)" } }} fontSize="inherit" />
               </IconButton>
-              {/* post.likes*/ } {post.likeCount} 
-              <IconButton aria-label="VideogameAssetOff" size="medium" onClick={() => dispatch(disLikePost(post._id))}>
+              {post.likes.length}
+              <IconButton aria-label="VideogameAssetOff" disabled={!user?.result} size="medium" onClick={() => dispatch(disLikePost(post._id))}>
                 <VideogameAssetOffIcon className='dislike' sx={{ "&:hover": { color: "rgb(232, 96, 162)" } }} fontSize="inherit" />
               </IconButton>
-              {post.disLikeCount}
+              {post.dislikes.length}
             </div>
             <div className='comShare' align='right'>
               <IconButton aria-label="InsertComment" size="medium">

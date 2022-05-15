@@ -1,9 +1,7 @@
 import Profile from "../models/profile.js";
-import bcrypt from 'bcrypt.js';
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-// Završiti sing in i sign up formu
-// Napraviti api i likes u content.js
-//provjerit mongodb shemu(Odkomentirati likes i dislikes)
+// Navbar buttoni
 
 export const getProfiles = async (req, res) => {
   try {

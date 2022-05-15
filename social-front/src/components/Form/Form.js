@@ -32,6 +32,7 @@ const clear = () => {
     setPostData({ profilePicture: '', title: '', message: '', tags: '', selectedFile: '' });
   };
 
+  
 return (
 <Container component="main" maxWidth="xs" align="right">
 <Paper>

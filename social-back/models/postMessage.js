@@ -8,22 +8,22 @@ const postSchema = mongoose.Schema({
   tags: [String],
   selectedFile: String,
   profilePicture: String,
-  likeCount: {
-    type: Number,
-    default: 0
-  },
-  // likes:{
-  //   type:[String],
-  //   default: [],
+  // likeCount: {
+  //   type: Number,
+  //   default: 0
   // },
-  disLikeCount: {
-    type: Number,
-    default: 0
+  likes:{
+    type:[String],
+    default: [],
   },
-    // dislikes:{
-  //   type:[String],
-  //   default: [],
+  // disLikeCount: {
+  //   type: Number,
+  //   default: 0
   // },
+    dislikes:{
+    type:[String],
+    default: [],
+  },
   createdAt: {
     type: Date,
     default: new Date()

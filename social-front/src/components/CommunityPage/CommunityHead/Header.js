@@ -40,10 +40,18 @@ const Input = styled('input')({
     );
   }
 
-  
+  function Check(){
+    if(document.getElementById("follow-button").text() === "Follow"){
+      document.getElementById("follow-button").text("Following");
+    }else{
+      document.getElementById("#follow-button").text("Follow");
+    }
+  }
+
   function follow_button(){
+       
     return (
-        <div class='stil_follow'><Button>Follow</Button></div>
+        <div class='stil_follow'><Button id="follow-button" onClick={Check}>Follow</Button></div>
     );
   }
 

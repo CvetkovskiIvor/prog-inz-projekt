@@ -23,6 +23,8 @@
   position: fixed;
   background-color: #2C2F33;
   margin-left: 85%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body{

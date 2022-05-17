@@ -69,7 +69,7 @@ export default function SignUp() {
                   autoComplete="given-name"
                   name="username"
                   required
-                  handleChange={handleChange}
+                  onChange={handleChange}
                   fullWidth
                   id="username"
                   label="Username"
@@ -80,7 +80,7 @@ export default function SignUp() {
               <Grid item xs={12}>
                 <TextField
                   required
-                  handleChange={handleChange}
+                  onChange={handleChange}
                   fullWidth
                   id="email"
                   label="Email Address"
@@ -91,7 +91,7 @@ export default function SignUp() {
               <Grid item xs={12}>
                 <TextField
                   required
-                  handleChange={handleChange}
+                  onChange={handleChange}
                   fullWidth
                   name="password"
                   label="Password"

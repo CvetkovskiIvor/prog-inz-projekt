@@ -25,5 +25,5 @@ export const createProfile = (newProfile) => API.post('/profiles', newProfile);
 export const fetchCommunities = () => API.get('/communities');
 export const createCommunity = (newCommunity) => API.post('/communities', newCommunity);
 
-export const singIn = (formData) => API.post(`/posts/signin`, formData);
-export const singUp = (formData) => API.post(`/posts/signup`, formData);
+export const singIn = (formData) => API.post('/posts/signin', formData);
+export const singUp = (formData) => API.post('/posts/signup', formData);

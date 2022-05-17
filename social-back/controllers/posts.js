@@ -57,12 +57,12 @@ export const disLikePost = async (req, res) => {
   
   const post = await PostMessage.findById(id);
 
-  const index = post.likes.findIndex((id) => id===String(req.userId));
+  const index = post.dislikes.findIndex((id) => id===String(req.userId));
 
   if(index === -1){
-    post.unlikes.push(req.userId);
+    post.dislikes.push(req.userId);
   } else{
-    post.likes = post.unlikes.filter((id) => id !== String(req.userId));
+    post.dislikes = post.dislikes.filter((id) => id !== String(req.userId));
   }
 
   const updatedPost = await PostMessage.findByIdAndUpdate(id, post, { new: true });

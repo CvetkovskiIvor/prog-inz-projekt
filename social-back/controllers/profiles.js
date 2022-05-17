@@ -1,11 +1,15 @@
-import Profile from "../models/profile.js";
+import ProfileMessage from "../models/profile.js";
+import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import PostMessage from "../models/postMessage.js";
 // Navbar buttoni
+
+const router = express.Router();
 
 export const getProfiles = async (req, res) => {
   try {
-    const profiles = await Profile.find();
+    const profiles = await ProfileMessage.find();
 
     console.log(profiles);
 
@@ -18,7 +22,7 @@ export const getProfiles = async (req, res) => {
 export const createProfile = async (req, res) => {
   const profile = req.body;
  
-  const newProfile = new Profile(profile);
+  const newProfile = new ProfileMessage(profile);
 
   try {
     await newProfile.save();
@@ -33,7 +37,7 @@ export const signin = async(req, res) => {
   const {email, password} = req.body;
 
   try {
-    const existingUser = await User.findOne({email});
+    const existingUser = await ProfileMessage.findOne({email});
 
     if(!existingUser) return res.status(404).json({message: "User doesn't exist"});
 
@@ -52,12 +56,12 @@ export const signup = async(req, res) =>{
   const {email, password, username} = req.body;
 
     try{
-      const existingUser = await User.findOne({email});
+      const existingUser = await ProfileMessage.findOne({email});
       if(existingUser) return res.status(400).json({message: "User already exist"});
 
       const hashedPassword = await bcrypt.hash(password, 12);
 
-      const result = await User.create({email, password: hashedPassword, username});
+      const result = await ProfileMessage.create({email, password: hashedPassword, username});
       const token = jwt.sign({email:result.email, id: result._id}, 'test',{expiresIn: "1h"});
       res.status(200).json({result: result,token});
 
@@ -66,3 +70,4 @@ export const signup = async(req, res) =>{
 
     }
 }
+export default router;

@@ -67,7 +67,7 @@ export default function SignIn() {
             <TextField
               margin="normal"
               required
-              handleChange={handleChange}
+              onChange={handleChange}
               fullWidth
               id="email"
               label="Email Address"
@@ -78,7 +78,7 @@ export default function SignIn() {
             <TextField
               margin="normal"
               required
-              handleChange={handleChange}
+              onChange={handleChange}
               fullWidth
               name="password"
               label="Password"

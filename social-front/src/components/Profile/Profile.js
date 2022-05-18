@@ -12,11 +12,10 @@ export default function Profile() {
   return (
     <div className="profile">
       <Box 
-      className='profile-container'
-      width={{xs: '100%', sm: '300px'}}
-      marginTop={{xs:0, sm:'5%'}}
-      marginRight={{xs:0, sm:'10%'}}
-      marginBottom={{xs:'3%', sm:'5%'}}
+        className='profile-container'
+        marginBottom={{xs:'3%', sm:'5%'}}
+        marginTop={{xs:0, sm:'40%'}}
+        width={{xs: '100%', sm: '300px'}}
       >
         <img className='profile-cover-photo' src={CoverPhoto} alt=''></img>
         <Box className='profile-info-container'>

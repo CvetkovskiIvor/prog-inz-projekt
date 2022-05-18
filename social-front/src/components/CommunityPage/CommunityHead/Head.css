@@ -27,6 +27,15 @@
   margin-top: -4%;
   float:left;
  }
+ #follow_button{
+   background: #2C2F33;
+   border-radius: 22px;
+   width: 200%;
+   height: 110%;
+   color: whitesmoke;
+   border-color: gray;
+   transition: 0.5s;
+ }
 
   .stil_back{
       background-color: rgb(54, 53, 53);
@@ -47,3 +56,5 @@
     float: left;
     color: #D3D3D3;
   }
+
+

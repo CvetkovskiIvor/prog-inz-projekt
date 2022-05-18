@@ -24,6 +24,9 @@ import CardMedia from '@mui/material/CardMedia';
 import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Skeleton from '@mui/material/Skeleton';
+import Alert from '@mui/material/Alert';
+import Collapse from '@mui/material/Collapse';
+import CloseIcon from '@mui/icons-material/Close';
 import './ComPage.css'
 
 export default function Commun() {
@@ -231,7 +234,9 @@ export default function Commun() {
           Upload
           </Button>
       </label>
-      
+      <br/>
+      <br/>
+      <div>{TransitionAlerts()}</div>
       </>
     );
   }
@@ -242,12 +247,41 @@ export default function Commun() {
       Add Your information about the page below...<br/>
       <form>
         <textarea style={{width: "100%", height: "300px", border: "none", backgroundColor: "lightgray"}} placeholder="Enter text here..."/><br/>
-      </form>
+      </form><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       {save_button()}
       </>
       
     );
 }
+
+function TransitionAlerts() {
+  const [open, setOpen] = React.useState(true);
+
+  return (
+    <Box className="stil_alert_box">
+      <Collapse in={open}>
+        <Alert
+          action={
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              size="small"
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }
+          sx={{ mb: 2 }}
+        >
+          Popup after succesfuly making a post!
+        </Alert>
+      </Collapse>
+    </Box>
+    );
+  }
+
 
  // finalni export
   return (

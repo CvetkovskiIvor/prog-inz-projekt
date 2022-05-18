@@ -1,3 +1,13 @@
+*::-webkit-scrollbar{
+  background: rgb(54, 53, 53);
+  width: 12px;
+}
+*::-webkit-scrollbar-thumb{
+  background-color: gray;
+  border-radius: 22px;
+  width: 5px;
+}
+
 .stil_ljudi  {
     float: right;
     margin-right: 10%;
@@ -13,6 +23,12 @@
     text-align: center;
   }
 
+.stil_alert_box{
+    width: 100%;
+    float:center;
+  }
+  
+
 .stil_info  {
     text-align: center;
   }
@@ -27,10 +43,17 @@
   overflow-y: auto;
 }
 
+.stil_sidebar::-webkit-scrollbar {
+  display: none;
+}
+
 body{
-  background-image: url("backgroundRework.jpg");
+  background: url("backgroundRework2.jpg") no-repeat center center fixed;
   background-color: gray;
-  background-repeat: repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .test_za_sliku{
@@ -43,4 +66,5 @@ body{
     border: 3px solid rgb(54, 53, 53);
     text-align: center;
 }
+
 

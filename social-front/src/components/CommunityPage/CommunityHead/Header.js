@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
@@ -9,6 +10,7 @@ import './Head.css'
 const Input = styled('input')({
     display: 'none',
 });
+
 
  function banner_place(){
     return(
@@ -40,18 +42,26 @@ const Input = styled('input')({
     );
   }
 
-  function Check(){
-    if(document.getElementById("follow-button").text() === "Follow"){
-      document.getElementById("follow-button").text("Following");
-    }else{
-      document.getElementById("#follow-button").text("Follow");
-    }
+  function change()
+  {
+      var elem = document.getElementById("follow_button");
+
+      if (elem.value==="Follow"){
+        elem.value = "Following";
+        elem.style.background = "#0A8AF4";
+      }else{
+        elem.value = "Follow";
+        elem.style.background = "#2C2F33";
+      } 
+
   }
 
   function follow_button(){
        
     return (
-        <div class='stil_follow'><Button id="follow-button" onClick={Check}>Follow</Button></div>
+      <>
+        <div class='stil_follow'><input onClick={change} type="button" value="Follow" id="follow_button"></input></div>
+      </>
     );
   }
 

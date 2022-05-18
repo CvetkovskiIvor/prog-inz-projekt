@@ -11,13 +11,19 @@ import {getPosts} from '../../actions/posts';
 import Profile from '../../components/Profile/Profile'
 import './index.css'
 
-function App() {
+function App(props) {
   const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch(); 
  
   useEffect(()=>{
     dispatch(getPosts());
   },[currentId,dispatch]);
+
+  // povlacenje username-a iz URL-a
+  let path = window.location.pathname;
+  let directories = path.split("/");
+  let lastDirectory = directories[(directories.length - 1)];
+  console.log(lastDirectory);
 
   return (
     <div>

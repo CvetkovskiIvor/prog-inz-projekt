@@ -6,12 +6,13 @@ import IconButton from '@mui/material/IconButton';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import Button from '@mui/material/Button';
 import './Head.css'
-
+///////////////////////////////constants//////////////////////////
 const Input = styled('input')({
     display: 'none',
 });
-
-
+//////////////////////////////////variables///////////////////////
+var state_follow = 1;
+//////////////////////////////functions///////////////////////////
  function banner_place(){
     return(
       <Box>
@@ -42,25 +43,37 @@ const Input = styled('input')({
     );
   }
 
-  function change()
-  {
+  function change(){
       var elem = document.getElementById("follow_button");
-
       if (elem.value==="Follow"){
         elem.value = "Following";
         elem.style.background = "#0A8AF4";
+        state_follow = 2;
       }else{
+        state_follow = 1;
         elem.value = "Follow";
         elem.style.background = "#2C2F33";
-      } 
+      }
 
+  }
+
+  function check_state(){
+    var tmp =  document.getElementById("follow_button");
+
+    if(state_follow === 1){
+        tmp.style.background = "#2C2F33";
+        tmp.value = "Follow";
+    }else if(state_follow === 2){
+        tmp.style.background = "#0A8AF4";
+        tmp.value = "Following";
+    }
   }
 
   function follow_button(){
        
     return (
       <>
-        <div class='stil_follow'><input onClick={change} type="button" value="Follow" id="follow_button"></input></div>
+        <div class='stil_follow'><input onClick={change} type="button" id="follow_button"></input></div>
       </>
     );
   }
@@ -105,6 +118,7 @@ export default function Header(){
       <h1 class='stil_ime'>Ime stranice</h1><br/>
       <p class='stil_podnaslov'>skraceno</p>
       </div>
+      {check_state}
       {follow_button()}
       </>
     );

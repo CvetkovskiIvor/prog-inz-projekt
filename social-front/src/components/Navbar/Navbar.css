@@ -1,3 +1,12 @@
+*::-webkit-scrollbar{
+  background: #27282b;
+  width: 12px;
+}
+*::-webkit-scrollbar-thumb{
+  background-color: gray;
+  border-radius: 22px;
+  width: 5px;
+}
 .multitext {
     background-image: linear-gradient(to left, 
                     red,

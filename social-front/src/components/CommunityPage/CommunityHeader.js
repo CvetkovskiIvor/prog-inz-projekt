@@ -28,6 +28,7 @@ import Alert from '@mui/material/Alert';
 import Collapse from '@mui/material/Collapse';
 import CloseIcon from '@mui/icons-material/Close';
 import './ComPage.css'
+import { width } from '@mui/system';
 
 export default function Commun() {
   //constants
@@ -135,13 +136,12 @@ export default function Commun() {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
+          <Typography sx={{ width: '33%', flexShrink: 0, marginTop: '-1%'}}>
           Moderators
           </Typography>
-          <Typography sx={{ color: 'gray' }}>...and mails...</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography sx={{ color: 'lightgray' }}>
+          <Typography sx={{ color: 'lightgray', marginTop: '-2%' }}>
             Quiccky300(quicc@gmail.com), Altimus69(succc@gmail.com), _blackSack_(giginigi@hotmail.com), Minecraft_boy123(dirtblocc@gmail.com)
           </Typography>
         </AccordionDetails>
@@ -152,13 +152,12 @@ export default function Commun() {
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0, color: 'gray' }}>Top Users</Typography>
-          <Typography sx={{ color: 'gray' }}>
-            Our most beloved users 
-          </Typography>
+          <Typography sx={{ width: '33%', flexShrink: 0, color: 'gray', marginTop: '-1%' }}>
+            Top Users
+            </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography sx={{ color: 'lightgray' }}>
+          <Typography sx={{ color: 'lightgray', marginTop: '-2%'}}>
           BananaSplit1991, Make14Ra1n, Gun444MM,.....
           </Typography>
         </AccordionDetails>
@@ -169,16 +168,13 @@ export default function Commun() {
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
+          <Typography sx={{ width: '33%', flexShrink: 0, marginTop: '-1%' }}>
             User rules
-          </Typography>
-          <Typography sx={{ color: 'gray' }}>
-            Filtering has been entirely disabled for whole web server
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography sx={{color: 'lightgray'}}>
-            Add more rules.....
+          <Typography sx={{color: 'lightgray',marginTop: '-2%'}}>
+          Filtering has been entirely disabled for whole web server
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -188,10 +184,12 @@ export default function Commun() {
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>Patreons</Typography>
+          <Typography sx={{ width: '33%', flexShrink: 0 , marginTop: '-1%'}}>
+            Patreons
+            </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography sx={{color: 'lightgray'}}>
+          <Typography sx={{color: 'lightgray', marginTop: '-2%'}}>
             Add those who contribute with more than just the posts and content...
           </Typography>
         </AccordionDetails>
@@ -250,7 +248,7 @@ export default function Commun() {
       <>
       Add Your information about the page below...<br/>
       <form>
-        <textarea style={{width: "100%", height: "300px", border: "none", backgroundColor: "lightgray"}} placeholder="Enter text here..."/><br/>
+        <textarea style={{width: "100%", height: "300px", border: "none", backgroundColor: "lightgray"}} placeholder="Enter text here..."/>
       </form><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       {save_button()}
       </>

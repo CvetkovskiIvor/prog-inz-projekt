@@ -56,6 +56,10 @@ body{
   background-size: cover;
 }
 
+h2{
+  color: whitesmoke;
+}
+
 .test_za_sliku{
   background: #2C2F33;
     background-position: center;

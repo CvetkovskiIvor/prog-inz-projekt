@@ -52,11 +52,12 @@ export default function Commun() {
     loading: PropTypes.bool,
   };
 
+  //ostale stranice prikazane u sidebaru
   function Media(props) {
     const { loading = false } = props;
   
     return (
-      <Card sx={{ maxWidth: 345, m: 2, background: 'gray'}}>
+      <Card sx={{ maxWidth: 345, m: 2, background: 'gray', height: 300}}>
         <CardHeader
           avatar={
             loading ? (
@@ -124,6 +125,7 @@ export default function Commun() {
     );
   }
 
+  // informacije o korisnicima na members dijelu; padajuca info tablica
   function members_information(){
     return(
       <div className="ModeratorAndUsers" class = 'stil_member_info'>
@@ -199,7 +201,7 @@ export default function Commun() {
   }
   
  
-
+  //save button na about dijelu
   function save_button(){
     return (
       <Box component="span" sx={{p: 1, border: '1px solid grey', background:'#2C2F33'}}>
@@ -209,7 +211,7 @@ export default function Commun() {
   }
 
  
-
+  // informacije o korisnicima i moderatorima stranice
   function ljudi(){
     return (
         <div className='stil_ljudi'>
@@ -225,6 +227,7 @@ export default function Commun() {
     );
   }
 
+  //home gdje stoje postovi i gdje se mogu uplodeat
   function Home_options(){
     return(
       <>
@@ -241,6 +244,7 @@ export default function Commun() {
     );
   }
 
+  //about page dio
   function about_info(){
     return(
       <>
@@ -254,6 +258,7 @@ export default function Commun() {
     );
 }
 
+//alert za uspjesno dodavanje postova
 function TransitionAlerts() {
   const [open, setOpen] = React.useState(true);
 

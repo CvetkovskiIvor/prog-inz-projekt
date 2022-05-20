@@ -57,23 +57,22 @@ var state_follow = 1;
 
   }
 
-  function check_state(){
-    var tmp =  document.getElementById("follow_button");
-
-    if(state_follow === 1){
-        tmp.style.background = "#2C2F33";
-        tmp.value = "Follow";
-    }else if(state_follow === 2){
-        tmp.style.background = "#0A8AF4";
-        tmp.value = "Following";
-    }
+  function remove_plus(){
+    var tmp_plus = document.getElementById("unselectable");
+    tmp_plus.parentNode.removeChild(tmp_plus);
   }
+
 
   function follow_button(){
        
     return (
       <>
-        <div class='stil_follow'><input onClick={change} type="button" id="follow_button"></input></div>
+        <div class='stil_follow'>
+          <label htmlFor='follow_button' onClick={remove_plus}>
+            <p id="unselectable">+</p>
+            <input onClick={change} type="button" id="follow_button"></input>
+          </label>
+        </div> 
       </>
     );
   }
@@ -118,7 +117,6 @@ export default function Header(){
       <h1 class='stil_ime'>Ime stranice</h1><br/>
       <p class='stil_podnaslov'>skraceno</p>
       </div>
-      {check_state}
       {follow_button()}
       </>
     );

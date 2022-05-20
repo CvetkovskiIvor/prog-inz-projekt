@@ -54,6 +54,10 @@ export const signin = async(req, res) => {
 
 export const signup = async(req, res) =>{
   const {email, password, username} = req.body;
+  if(!email || !username || !password){
+    res.status(500).json({message: 'Sign up form is note complete'});
+
+  }else{
 
     try{
       const existingUser = await ProfileMessage.findOne({email});
@@ -69,5 +73,6 @@ export const signup = async(req, res) =>{
       res.status(500).json({message: 'Something went wrong'});
 
     }
+  }
 }
 export default router;

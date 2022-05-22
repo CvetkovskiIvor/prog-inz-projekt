@@ -1,10 +1,21 @@
-import Profile from "../models/profile.js";
+import ProfileMessage from "../models/profile.js";
 
 export const getProfiles = async (req, res) => {
   try {
-    const profiles = await Profile.find();
+    const profiles = await ProfileMessage.find();
 
     console.log(profiles);
+
+    res.status(200).json(profiles);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+}
+
+export const getProfilesByURL = async (req, res) => {
+  const { username } = req.query;
+  try {
+    const profiles = await ProfileMessage.find({ username });
 
     res.status(200).json(profiles);
   } catch (error) {
@@ -15,7 +26,7 @@ export const getProfiles = async (req, res) => {
 export const createProfile = async (req, res) => {
   const profile = req.body;
  
-  const newProfile = new Profile(profile);
+  const newProfile = new ProfileMessage(profile);
 
   try {
     await newProfile.save();

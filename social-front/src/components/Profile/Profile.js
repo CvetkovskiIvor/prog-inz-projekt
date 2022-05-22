@@ -6,9 +6,12 @@ import ProfilePhoto from '../../Images/profile-image.png';
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
+import { useSelector } from 'react-redux';
 
-export default function Profile() {
-  
+const Profile = ({setCurrentId}) => {
+  const profiles = useSelector((state) => state.profiles);
+  //console.log(profiles);
+
   return (
     <div className="profile">
       <Box 
@@ -43,4 +46,5 @@ export default function Profile() {
       </Box>
     </div>
   );
-}
+};
+export default Profile;

@@ -11,6 +11,7 @@ export const likePost = (id) => axios.patch(`${postUrl}/${id}/likePost`);
 export const disLikePost = (id) => axios.patch(`${postUrl}/${id}/disLikePost`);
 
 export const fetchProfiles = () => axios.get(profileUrl);
+export const fetchProfilesByURL = (URL) => axios.get(`${profileUrl}/search?username=${URL}`);
 export const createProfile = (newProfile) => axios.post(profileUrl, newProfile);
 
 export const fetchCommunities = () => axios.get(communityUrl);

@@ -7,31 +7,31 @@ import Box from '@mui/material/Box';
 import Navbar from '../../components/Navbar/Navbar';
 import {useDispatch, useSelector} from 'react-redux';
 import Posts from '../../components/Posts/Posts';
-import {getPosts} from '../../actions/posts'; 
+import {getPostsByCreator} from '../../actions/posts'; 
 import {getProfilesByURL} from '../../actions/profiles'; 
+import {useParams} from 'react-router-dom';
 import Profile from '../../components/Profile/Profile'
 import './index.css'
 
-function App(props) {
+function App() {
   const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch(); 
- 
+  const { username } = useParams();
+  
   useEffect(()=>{
-    dispatch(getPosts());
-  },[currentId,dispatch]);
-
+    dispatch(getPostsByCreator(username));
+    dispatch(getProfilesByURL(username));
+  },[currentId, dispatch]);
+  
   // povlacenje username-a iz URL-a
-  let path = window.location.pathname;
-  let directories = path.split("/");
-  let lastDirectory = directories[(directories.length - 1)];
+  // console.log(username);
 
   // provjera postojanja trazenog profila
-  dispatch(getProfilesByURL(lastDirectory));
-
-  /*const profiles = useSelector((state) => state.profiles);
-  console.log(profiles);*/
   
-  if(0){
+  const profiles = useSelector((state) => state.profiles);
+  console.log(profiles.username);
+  
+  if(profiles.username){
     return (
       <>
         <p>
@@ -52,7 +52,7 @@ function App(props) {
                 <Posts setCurrentId={setCurrentId} c/>
               </Grid>
               <Grid item xs={12} sm={3}>
-                <Profile setCurrentId={setCurrentId}/>
+                <Profile />
               </Grid>
             </Grid>
           </Container>

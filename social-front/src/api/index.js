@@ -6,6 +6,7 @@ const communityUrl = `http://${process.env.REACT_APP_HOST}:${process.env.REACT_A
 
 
 export const fetchPosts = () => axios.get(postUrl);
+export const fetchPostsByCreator = (username) => axios.get(`${postUrl}/search?creator=${username}`);
 export const createPost = (newPost) => axios.post(postUrl, newPost);
 export const likePost = (id) => axios.patch(`${postUrl}/${id}/likePost`);
 export const disLikePost = (id) => axios.patch(`${postUrl}/${id}/disLikePost`);

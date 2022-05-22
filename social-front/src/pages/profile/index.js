@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import Navbar from '../../components/Navbar/Navbar';
 import {useDispatch, useSelector} from 'react-redux';
 import Posts from '../../components/Posts/Posts';
-import {getPostsByCreator} from '../../actions/posts'; 
+import {getPostsByCreator, getPosts} from '../../actions/posts'; 
 import {getProfilesByURL} from '../../actions/profiles'; 
 import {useParams} from 'react-router-dom';
 import Profile from '../../components/Profile/Profile'
@@ -19,7 +19,7 @@ function App() {
   const { username } = useParams();
   
   useEffect(()=>{
-    dispatch(getPostsByCreator(username));
+    dispatch(getPosts(username));
     dispatch(getProfilesByURL(username));
   },[currentId, dispatch]);
   
@@ -31,7 +31,7 @@ function App() {
   const profiles = useSelector((state) => state.profiles);
   console.log(profiles.username);
   
-  if(profiles.username){
+  if(0){
     return (
       <>
         <p>
@@ -52,7 +52,7 @@ function App() {
                 <Posts setCurrentId={setCurrentId} c/>
               </Grid>
               <Grid item xs={12} sm={3}>
-                <Profile />
+                <Profile setCurrentId={setCurrentId} />
               </Grid>
             </Grid>
           </Container>

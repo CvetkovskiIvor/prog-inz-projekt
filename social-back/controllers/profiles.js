@@ -1,4 +1,7 @@
 import ProfileMessage from "../models/profile.js";
+import express from 'express';
+
+const router = express.Router();
 
 export const getProfiles = async (req, res) => {
   try {
@@ -37,3 +40,5 @@ export const createProfile = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 }
+
+export default router;

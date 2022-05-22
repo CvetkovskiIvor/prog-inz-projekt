@@ -17,7 +17,7 @@ export const getPostsByCreator = async (req, res) => {
   const { creator } = req.query;
 
   try {
-    const posts = await PostMessage.findOne({ creator });
+    const posts = await PostMessage.find({ creator });
 
     res.status(200).json(posts);
   } catch (error) {

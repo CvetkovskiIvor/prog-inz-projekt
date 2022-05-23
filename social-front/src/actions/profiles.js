@@ -11,7 +11,7 @@ export const getProfiles= () => async (dispatch) => {
 };
 export const getProfilesByURL= (URL) => async (dispatch) => {
   try {
-    const { data: { data } } = await api.fetchProfilesByURL(URL);
+    const { data } = await api.fetchProfilesByURL(URL);
 
     dispatch({ type: 'FETCH_BY_URL', payload: data });
   } catch (error) {

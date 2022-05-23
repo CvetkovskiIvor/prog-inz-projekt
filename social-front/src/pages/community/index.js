@@ -8,12 +8,12 @@ import {getPosts} from '../../actions/posts';
 
 
 function App() {
-  const [currentId, setCurrentId] = useState(0);
+/*  const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch(); 
  
   useEffect(()=>{
     dispatch(getPosts());
-  },[currentId,dispatch]);
+  },[currentId,dispatch]);*/
 
   return (
     <div>

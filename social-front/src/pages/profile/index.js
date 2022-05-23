@@ -16,17 +16,13 @@ import './index.css'
 function App() {
   const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch(); 
+  // povlacenje username-a iz URL-a
   const { username } = useParams();
   
   useEffect(()=>{
-    dispatch(getPosts(username));
     dispatch(getProfilesByURL(username));
-  },[currentId, dispatch]);
-  
-  // povlacenje username-a iz URL-a
-  // console.log(username);
-
-  // provjera postojanja trazenog profila
+    dispatch(getPosts());
+  },[currentId]);
   
   const profiles = useSelector((state) => state.profiles);
   console.log(profiles.username);

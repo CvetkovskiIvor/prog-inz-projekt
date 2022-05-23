@@ -8,4 +8,4 @@ router.get('/', getProfiles);
 router.get('/search', getProfilesByURL);
 router.post('/', createProfile);
 
-export default router
+export default router;

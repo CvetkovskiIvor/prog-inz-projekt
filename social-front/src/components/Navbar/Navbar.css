@@ -13,3 +13,8 @@
 .navBar {
   /*position: fixed;*/
 }
+
+.profile{
+  display: flex;
+  justify-content: space-between;
+}

@@ -39,6 +39,8 @@ export default function SignIn() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(signin(formData));
+    setFormData({username: '', email: '', password: ''});
+
   };
 
   const handleChange = (e) =>{
@@ -73,6 +75,7 @@ export default function SignIn() {
               label="Email Address"
               name="email"
               autoComplete="email"
+              value = {formData.email}
               autoFocus
             />
             <TextField
@@ -85,6 +88,7 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value = {formData.password}
             />
             <Button
               type="submit"

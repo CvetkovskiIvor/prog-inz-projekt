@@ -38,6 +38,7 @@ export default function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(signup(formData));
+    setFormData({username: '', email: '', password: ''});
   };
 
   const handleChange = (e) =>{
@@ -74,6 +75,7 @@ export default function SignUp() {
                   id="username"
                   label="Username"
                   autoFocus
+                  value = {formData.username}
                 />
               </Grid>
 
@@ -86,6 +88,7 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  value = {formData.email}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -98,6 +101,7 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  value = {formData.password}
                 />
               </Grid>
 

@@ -9,7 +9,8 @@ import Button from '@mui/material/Button';
 import { useSelector } from 'react-redux';
 
 const Profile = ({setCurrentId}) => {
-
+  const profiles = useSelector((state) => state.profiles);
+  console.log(profiles.username);
   return (
     <div className="profile">
       <Box 

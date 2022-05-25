@@ -1,8 +1,12 @@
-import Community from "../models/community.js";
+import  CommunityMessage from "../models/community.js";
+import express from 'express';
+
+const router = express.Router();
+
 
 export const getCommunities = async (req, res) => {
   try {
-    const communities = await Community.find();
+    const communities = await  CommunityMessage.find();
 
     console.log(communities);
 
@@ -15,7 +19,7 @@ export const getCommunities = async (req, res) => {
 export const createCommunity = async (req, res) => {
   const community = req.body;
  
-  const newCommunity = new Community(community);
+  const newCommunity = new  CommunityMessage(community);
 
   try {
     await newCommunity.save();
@@ -25,3 +29,5 @@ export const createCommunity = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 }
+
+export default router;

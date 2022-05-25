@@ -15,6 +15,8 @@ import './ContentSS.css';
 
 const ContentTemplate = ({post, setCurrentId}) => {
   const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem('profile'));
+
 
   return (
     <React.Fragment>
@@ -23,7 +25,7 @@ const ContentTemplate = ({post, setCurrentId}) => {
           <Box className='profilBox'>
             <Avatar alt="Profile pic" className='profpic'src={post.profilePicture} />
             <p className='ime'>
-              {post.creator} 
+              {post.creator}
             </p>
           </Box>
           <Typography  variant="h5" component = "div" gutterBottom className='naslov'>
@@ -38,14 +40,14 @@ const ContentTemplate = ({post, setCurrentId}) => {
           </div>
           <div className="allIcons">
             <div className='likedislike' >
-              <IconButton aria-label="VideogameAsset" size="medium" onClick={() => dispatch(likePost(post._id))}>
+              <IconButton aria-label="VideogameAsset" disabled={!user?.result} size="medium" onClick={() => dispatch(likePost(post._id))}>
                 <VideogameAssetIcon className='like' sx={{ "&:hover": { color: "rgb(26, 238, 26)" } }} fontSize="inherit" />
               </IconButton>
-              {post.likeCount}
-              <IconButton aria-label="VideogameAssetOff" size="medium" onClick={() => dispatch(disLikePost(post._id))}>
+              {post.likes.length}
+              <IconButton aria-label="VideogameAssetOff" disabled={!user?.result} size="medium" onClick={() => dispatch(disLikePost(post._id))}>
                 <VideogameAssetOffIcon className='dislike' sx={{ "&:hover": { color: "rgb(232, 96, 162)" } }} fontSize="inherit" />
               </IconButton>
-              {post.disLikeCount}
+              {post.dislikes.length}
             </div>
             <div className='comShare' align='right'>
               <IconButton aria-label="InsertComment" size="medium">

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -16,7 +16,11 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import Avatar from '@mui/material/Avatar';
+import decode from 'jwt-decode';
 import './Navbar.css';
+import { useDispatch } from 'react-redux';
+import {useLocation} from 'react-router-dom';
+import { display } from '@mui/system';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -60,8 +64,27 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 }));
 
 export default function Navbar() {
+    const dispatch = useDispatch();
+    const location = useLocation();
+    const [user,setUser] = useState(JSON.parse(localStorage.getItem('profile')));
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const logout = () => {
+      dispatch({type:'LOGOUT'});
+      setUser(null);
+    }
+
+    useEffect(() => {
+      const token = user?.token;
+      if(token){
+        const decodedToken = decode(token);
+        if(decodedToken.exp * 1000 < new Date().getTime()) logout();
+      }
+
+      setUser(JSON.parse(localStorage.getItem('profile')));
+      console.log(user);
+    });
     
     const handleChange = (event) => {
       setAuth(event.target.checked);
@@ -106,6 +129,14 @@ export default function Navbar() {
               <Typography variant="h5" component="div" className="multitext" align = "center" sx={{ flexGrow: 1, fontFamily: "Fantasy", marginLeft: 48, fontSize: 28, marginRight: 70}}
               >Game Times
               </Typography>
+              {user ? (
+              <div className='profile'>
+              <Avatar alt={user.result.username} >{user.result.username.charAt(0)}</Avatar>
+              <Button color="inherit" sx={{fontSize: 15, fontFamily: "fantasy"}}onClick={logout}> Logout</Button>
+            </div>
+            ) : 
+            (
+            <div>
               <Button color="inherit" sx={{fontSize: 15, fontFamily: "fantasy"}} onClick={toggleSignUp}>Sign up</Button>
               <Button color="inherit" sx={{fontSize: 15, fontFamily: "fantasy"}} onClick={toggleSignIn}>Login</Button>
               <IconButton
@@ -118,8 +149,6 @@ export default function Navbar() {
               >
                 <AccountCircle />
               </IconButton>
-              {auth && (
-            <div>
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}

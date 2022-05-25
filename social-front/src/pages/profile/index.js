@@ -25,17 +25,9 @@ function App() {
   },[currentId]);
   
   const profiles = useSelector((state) => state.profiles);
-  console.log(profiles.username);
+  console.log(profiles);
   
-  if(0){
-    return (
-      <>
-        <p>
-          The file or directory you searched does not exist :(
-        </p>
-      </>
-    );
-  }else{
+  if(profiles?.username){
     return (
       <div>
       <Navbar/>
@@ -54,6 +46,14 @@ function App() {
           </Container>
         </Grow>
       </div>
+    );
+  }else{
+    return (
+      <>
+        <p>
+          The file or directory you searched does not exist :(
+        </p>
+      </>
     );
   }
 };

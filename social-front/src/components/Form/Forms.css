@@ -1,0 +1,20 @@
+.popup {
+    max-width: 500px;
+    width: fit-content;
+    background-color: rgb(203, 203, 203);
+    border-radius: 20px;
+    border-color: rgba(24, 24, 24, 0.5);
+    
+}
+
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    color:rgb(15, 80, 192);
+}
+
+.submitBtn {
+    background-color: rgb(60, 55, 216);
+}
+
+.clearBtn {
+    background-color: blueviolet;
+}

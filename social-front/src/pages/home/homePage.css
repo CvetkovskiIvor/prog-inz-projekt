@@ -2,6 +2,10 @@
    background-color: #1E2124;
 }
 
+.popup-overlay {
+  background: rgba(24, 24, 24, 0.5);
+}
+
 .button {
    position: fixed;
    bottom: 7%;
@@ -15,25 +19,41 @@
 
 .modal {
    font-size: 12px;
-   background-color: #1E2124;
+   font-weight: bold;
+   max-width: 500px;
+   color: rgb(179, 126, 199);
+   background-color: #313841;
+   border: 10px solid;
+   border-left-style: double;
+   border-right-style: double;
+   border-top-color: rgb(155, 118, 200);
+   border-bottom-color: rgb(155, 118, 200);
+   border-left-color: rgb(90, 67, 99);
+   border-right-color: rgb(90, 67, 99);
+   padding: 7px;
+   border-radius: 50px 10px;
  }
+
  .modal > .header {
    width: 100%;
-   border-bottom: 1px solid gray;
    font-size: 18px;
    text-align: center;
    padding: 5px;
  }
+
  .modal > .content {
    width: 100%;
    padding: 10px 5px;
+   color: black;
  }
+
  .modal > .actions {
    width: 100%;
    padding: 10px 5px;
    margin: auto;
    text-align: center;
  }
+ 
  .modal > .close {
    cursor: pointer;
    position: absolute;

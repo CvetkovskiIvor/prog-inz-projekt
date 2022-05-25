@@ -48,7 +48,7 @@ function App() {
                   </button>
                   <div className="header"> ADD YOUR POST </div>
                   <div className="content">
-                  <Form/>
+                    <Form/>
                   </div>
                   <div className="actions">
                   </div>

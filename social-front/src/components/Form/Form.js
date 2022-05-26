@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
 // import useStyles from './styles';
 import { createPost } from '../../actions/posts';
-import IconButton from '@mui/material/IconButton';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import './Forms.css';
 
@@ -41,14 +40,10 @@ return (
         <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
         <TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
         <TextField name="tags" variant="outlined" label="Tags (coma separated)" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })} />
-        <div>
-            <IconButton aria-label="AddAPhoto" size="medium" /*onClick={() => dispatch(disLikePost(post._id))}*/>
-                <AddAPhotoIcon className='dislike' sx={{ "&:hover": { color: "rgb(22, 96, 202)" } }} fontSize="inherit" />
-            </IconButton>
-            <FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} />
-        </div>
-        <Button variant="contained" className="submitBtn" size="large" type="submit" fullWidth>Submit</Button>
-        <Button variant="contained" className="clearBtn" size="small" onClick={clear} fullWidth>Clear</Button>
+        <Button style={{backgroundColor: "#21b6ae"}}variant="contained" className="upload" fullWidth color="primary" startIcon={<AddAPhotoIcon />} /*onClick={() => dispatch(disLikePost(post._id))}*/ >Upload</Button>
+        <FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} />
+        <Button variant="contained" color="secondary" className="submitBtn" size="large" type="submit" fullWidth>Submit</Button>
+        <Button variant="contained" color="primary" className="clearBtn" size="small" onClick={clear} fullWidth>Clear</Button>
     </form>
     
 </div>

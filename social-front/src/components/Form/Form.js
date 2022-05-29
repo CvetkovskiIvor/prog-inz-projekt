@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-// import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
-// import useStyles from './styles';
 import { createPost } from '../../actions/posts';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import './Forms.css';
@@ -33,6 +31,29 @@ const clear = () => {
     setPostData({ profilePicture: '', creator: '', title: '', message: '', tags: '', selectedFile: '' });
   };
 
+
+  const uploadImage = async (e) => {
+    const file = e.target.files[0];
+    const base64 = await convertBase64(file);
+    // setBaseImage(base64);
+    setPostData({ ...postData, selectedFile: base64 });
+  };
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
 return (
 <Container component="main" align="right">
 <div>
@@ -40,8 +61,11 @@ return (
         <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
         <TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
         <TextField name="tags" variant="outlined" label="Tags (coma separated)" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })} />
-        <Button style={{backgroundColor: "#21b6ae"}}variant="contained" className="upload" fullWidth color="primary" startIcon={<AddAPhotoIcon />} /*onClick={() => dispatch(disLikePost(post._id))}*/ >Upload</Button>
-        <FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} />
+        <input style={{ display: "none" }} id="contained-button-file" type="file" onChange={(e) => { uploadImage(e);}} />
+        <label htmlFor="contained-button-file">
+        <Button style={{backgroundColor: "#21b6ae"}} variant="contained" className="upload" fullWidth color="primary" component="span" startIcon={<AddAPhotoIcon />}>Upload</Button>
+        </label>
+        {/* <FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} /> */}
         <Button variant="contained" color="secondary" className="submitBtn" size="large" type="submit" fullWidth>Submit</Button>
         <Button variant="contained" color="primary" className="clearBtn" size="small" onClick={clear} fullWidth>Clear</Button>
     </form>

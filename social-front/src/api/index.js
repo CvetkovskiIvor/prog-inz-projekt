@@ -18,6 +18,8 @@ export const fetchPosts = () => API.get('/posts');
 export const createPost = (newPost) => API.post('/posts', newPost);
 export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
 export const disLikePost = (id) => API.patch(`/posts/${id}/disLikePost`);
+export const comment = (value, id) => API.post(`/posts/${id}/commentPost`, { value });
+export const fetchPost = (id) => API.get(`/posts/${id}`);
 
 export const fetchProfiles = () => API.get('/profiles');
 export const createProfile = (newProfile) => API.post('/profiles', newProfile);

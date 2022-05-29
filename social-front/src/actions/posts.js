@@ -9,6 +9,15 @@ export const getPosts = () => async (dispatch) => {
       console.log(error.message);
     }
   };
+  export const getPost = (id) => async (dispatch) => {
+    try {
+      const { data } = await api.fetchPost(id);
+  
+      dispatch({ type: 'FETCH_POST', payload: { post: data } });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   export const createPost = (post) => async (dispatch) => {
     try {
       const { data } = await api.createPost(post);
@@ -36,3 +45,16 @@ export const getPosts = () => async (dispatch) => {
       console.log(error.message);
     }
   };
+  export const commentPost = (value, id) => async (dispatch) => {
+    try {
+
+      const { data } = await api.comment(value, id);
+  
+      dispatch({ type: 'COMMENT', payload: data });
+  
+      return data.comments;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  

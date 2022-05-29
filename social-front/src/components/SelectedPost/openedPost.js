@@ -11,18 +11,11 @@ import ShareIcon from '@mui/icons-material/Share';
 import { useDispatch } from 'react-redux';
 import {likePost, disLikePost} from '../../../actions/posts';
 import Avatar from '@mui/material/Avatar';
-import { useNavigate } from "react-router-dom";
-import './ContentSS.css';
+import '../Posts/Content/ContentSS.css';
 
-const ContentTemplate = ({post, setCurrentId}) => {
+const Post = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('profile'));
-
-  const selectPost = (e) => {
-    navigate(`/posts/${post._id}`);
-  };
-
+  const post  = useSelector((state) => state.posts);
 
   return (
     <React.Fragment>
@@ -70,4 +63,4 @@ const ContentTemplate = ({post, setCurrentId}) => {
   );
 };
 
-export default ContentTemplate;
+export default Post;

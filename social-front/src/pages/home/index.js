@@ -7,8 +7,9 @@ import Navbar from '../../components/Navbar/Navbar';
 import {useDispatch} from 'react-redux';
 import Posts from '../../components/Posts/Posts';
 import {getPosts} from '../../actions/posts'; 
-import Form from '../../components/Form/Form';
+//import Form from '../../components/Form/Form';
 import './homePage.css';
+import ScrollToTopButton from '../../components/Scroll/ScrollToTopButton';
 
 function App() {
   const [currentId, setCurrentId] = useState(0);
@@ -34,6 +35,9 @@ function App() {
           </Grid>
         </Container>
       </Grow>
+      <div>
+      <ScrollToTopButton/>
+      </div>
     </div>
   );
 };

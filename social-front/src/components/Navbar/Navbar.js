@@ -21,6 +21,14 @@ import './Navbar.css';
 import { useDispatch } from 'react-redux';
 import {useLocation} from 'react-router-dom';
 import { display } from '@mui/system';
+import { useNavigate} from 'react-router-dom';
+//import ChipInput from 'material-ui-chip-input';
+import { getPostsBySearch } from '../../actions/posts';
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search)
+}
+
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -69,6 +77,11 @@ export default function Navbar() {
     const [user,setUser] = useState(JSON.parse(localStorage.getItem('profile')));
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const query = useQuery();
+    const history = useNavigate();
+    const page = query.get('page') || 1;
+    const searchQuery = query.get('searchQuery');
+    const [search, setSearch] = useState('');
 
     const logout = () => {
       dispatch({type:'LOGOUT'});
@@ -85,6 +98,22 @@ export default function Navbar() {
       setUser(JSON.parse(localStorage.getItem('profile')));
       console.log(user);
     });
+
+    const searchPost = () => {
+      if(search.trim()){
+        //dispach -> fetch search post
+        dispatch(getPostsBySearch({search}));
+        history.push(`/posts/search?searchQuery=${searchQuery || 'none'}`);
+      } else{
+        history.push('/')
+      }
+    };
+
+    const handleKeyPress = (e) => {
+      if(e.keyCode == 13){
+        searchPost();
+      }
+    };
     
     const handleChange = (event) => {
       setAuth(event.target.checked);
@@ -120,12 +149,17 @@ export default function Navbar() {
               <Search>
                 <SearchIconWrapper>
                   <SearchIcon />
+                  
                 </SearchIconWrapper>
                 <StyledInputBase
                   placeholder="Search…" sx={{fontFamily: "-moz-initial", fontSize: 18, padding: (1, 1.2)}}
                   inputProps={{ 'aria-label': 'search' }}
+                  value={search}
+                  onKeyPress = {handleKeyPress}
+                  onChange = {(e) => setSearch(e.target.value)}
                 />
               </Search>
+              <Button onClick={searchPost}>Search</Button>
               <Typography variant="h5" component="div" className="multitext" align = "center" sx={{ flexGrow: 1, fontFamily: "Fantasy", marginLeft: 48, fontSize: 28, marginRight: 70}}
               >Game Times
               </Typography>

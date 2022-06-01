@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
+import Grid from "@mui/material/Grid";
 import { createPost } from '../../actions/posts';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import './Forms.css';
@@ -58,16 +59,16 @@ return (
 <Container component="main" align="right">
 <div>
     <form  className="popup" autoComplete='off' noValidate  onSubmit={handleSubmit}>
-        <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
-        <TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
-        <TextField name="tags" variant="outlined" label="Tags (coma separated)" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })} />
+        <TextField name="title" InputLabelProps={{style : {color : 'rgb(161, 110, 180)'} }} sx={{ input: { color: 'white' } }} variant="outlined" label="Title" color="secondary" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
+        <TextField name="message" InputLabelProps={{style : {color : 'rgb(161, 110, 180)'} }} inputProps={{ style: { color: "white" } }} variant="outlined" label="Message" color="secondary" fullWidth multiline rows={5} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
+        <TextField name="tags" InputLabelProps={{style : {color : 'rgb(161, 110, 180)'} }} sx={{ input: { color: 'white' } }} variant="outlined" label="Tags (coma separated)" color="secondary" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })} />
         <input style={{ display: "none" }} id="contained-button-file" type="file" onChange={(e) => { uploadImage(e);}} />
+        <Grid container className='Grid2'>
         <label htmlFor="contained-button-file">
-        <Button style={{backgroundColor: "#21b6ae"}} variant="contained" className="upload" fullWidth color="primary" component="span" startIcon={<AddAPhotoIcon />}>Upload</Button>
-        </label>
+        <Button  style={{backgroundColor: "#8a1979"}} variant="contained" className="upload" color="primary" component="span" startIcon={<AddAPhotoIcon />} >Upload</Button>
+        </label></Grid>
         {/* <FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} /> */}
-        <Button variant="contained" color="secondary" className="submitBtn" size="large" type="submit" fullWidth>Submit</Button>
-        <Button variant="contained" color="primary" className="clearBtn" size="small" onClick={clear} fullWidth>Clear</Button>
+        <Button variant="contained" style={{backgroundColor: "#21b63e"}} className="submitBtn" size="large" type="submit" fullWidth>Submit</Button>
     </form>
     
 </div>

@@ -12,9 +12,10 @@ import './Forms.css';
 
 
 const Form = ({ currentId, setCurrentId }) => {
-    const [postData, setPostData] = useState({creator:'', title:'', message:'', tags: '', selectedFile:''});
+    const [postData, setPostData] = useState({title:'', message:'', tags: '', selectedFile:''});
     const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
     const dispatch = useDispatch();
+    const user = JSON.parse(localStorage.getItem('profile'));
 
     useEffect(() => {
         if (post) setPostData(post);
@@ -22,15 +23,14 @@ const Form = ({ currentId, setCurrentId }) => {
 
 const handleSubmit = (e) => {
     e.preventDefault();
-
-    dispatch(createPost(postData));
-
+    dispatch(createPost({...postData, name: user?.result?.name}));
+    clear();
+    
 }
 const clear = () => {
     setCurrentId(0);
-    setPostData({ profilePicture: '', creator: '', title: '', message: '', tags: '', selectedFile: '' });
+    setPostData({ profilePicture: '', title: '', message: '', tags: '', selectedFile: '' });
   };
-
 
   const uploadImage = async (e) => {
     const file = e.target.files[0];

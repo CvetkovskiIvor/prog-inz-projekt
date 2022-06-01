@@ -12,6 +12,7 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import IconButton from '@mui/material/IconButton';
 import Popup from 'reactjs-popup';
 import './homePage.css';
+import ScrollToTopButton from '../../components/Scroll/ScrollToTopButton';
 
 function App() {
   const [currentId, setCurrentId] = useState(0);
@@ -59,6 +60,9 @@ function App() {
           </Grid>
         </Container>
       </Grow>
+      <div>
+      <ScrollToTopButton/>
+      </div>
     </div>
   );
 };

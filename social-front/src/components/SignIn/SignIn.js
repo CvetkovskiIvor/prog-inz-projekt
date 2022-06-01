@@ -9,6 +9,13 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {signin, signup} from '../../actions/auth';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+
+
+const initialState = {username: '', email: '', password: '' };
+
 
 function Copyright(props) {
   return (
@@ -26,13 +33,18 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+  const dispatch = useDispatch();
+
+  const [formData, setFormData] = useState(initialState);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(signin(formData));
+    setFormData({username: '', email: '', password: ''});
+
+  };
+
+  const handleChange = (e) =>{
+    setFormData({...formData, [e.target.name]: e.target.value});
   };
 
   return (
@@ -57,27 +69,27 @@ export default function SignIn() {
             <TextField
               margin="normal"
               required
+              onChange={handleChange}
               fullWidth
               id="email"
               label="Email Address"
               name="email"
               autoComplete="email"
+              value = {formData.email}
               autoFocus
             />
             <TextField
               margin="normal"
               required
+              onChange={handleChange}
               fullWidth
               name="password"
               label="Password"
               type="password"
               id="password"
               autoComplete="current-password"
+              value = {formData.password}
             />
-         {/*}   <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-        />*/}
             <Button
               type="submit"
               fullWidth

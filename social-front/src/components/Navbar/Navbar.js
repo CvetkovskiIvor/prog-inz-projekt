@@ -83,7 +83,6 @@ export default function Navbar() {
       }
 
       setUser(JSON.parse(localStorage.getItem('profile')));
-      console.log(user);
     });
     
     const handleChange = (event) => {

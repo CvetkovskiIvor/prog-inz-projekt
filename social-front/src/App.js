@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './pages/home/index'
 import ProfilePage from './pages/profile/index'
 import CommunityPage from './pages/community/index'
+// import SelectedPost from './components/SelectedPost/openedPost'
+import OnePost from './pages/onePost/index'
 
 function App() {
 
@@ -11,6 +13,8 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Home />}/>
+        <Route path='/:id' element={<OnePost />}/>
+        {/* <Route path='/:id' element={<SelectedPost />}/> */}
         <Route path='/profile' element={<ProfilePage />}/>
         <Route path='/community' element={<CommunityPage />}/>
       </Routes>

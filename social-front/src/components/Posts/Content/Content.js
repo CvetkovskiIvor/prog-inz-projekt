@@ -16,13 +16,12 @@ import './ContentSS.css';
 
 const ContentTemplate = ({post, setCurrentId}) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const history = useNavigate();
   const user = JSON.parse(localStorage.getItem('profile'));
 
   const selectPost = (e) => {
-    navigate(`/posts/${post._id}`);
+    history(`/${post._id}`);
   };
-
 
   return (
     <React.Fragment>

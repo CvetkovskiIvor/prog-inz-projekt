@@ -13,9 +13,9 @@ export const getPosts = () => async (dispatch) => {
     try {
       const { data } = await api.fetchPost(id);
   
-      dispatch({ type: 'FETCH_POST', payload: { post: data } });
+      dispatch({ type: 'FETCH_POST', payload: data });
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
   export const createPost = (post) => async (dispatch) => {

@@ -8,17 +8,31 @@ import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import VideogameAssetOffIcon from '@mui/icons-material/VideogameAssetOff';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import ShareIcon from '@mui/icons-material/Share';
-import { useDispatch } from 'react-redux';
-import {likePost, disLikePost} from '../../../actions/posts';
+import { useDispatch, useSelector} from 'react-redux';
+import { useEffect, useState } from 'react';
+import {likePost, disLikePost, getPost} from '../../actions/posts';
+import { CircularProgress } from '@mui/material';
+import { useParams} from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import '../Posts/Content/ContentSS.css';
+import Navbar from '../Navbar/Navbar';
 
 const Post = () => {
   const dispatch = useDispatch();
-  const post  = useSelector((state) => state.posts);
+  const { id } = useParams();
+  console.log(id);
+  const user = JSON.parse(localStorage.getItem('profile'));
+  const post = useSelector((state) => state.posts);
+  useEffect(()=>{
+    dispatch(getPost(id));
+  },[id]);
+  console.log(post.creator);
 
+  
+  if(post?.creator){
   return (
-    <React.Fragment>
+    <div className='pozadina'>
+      <React.Fragment>
       <Container className="qube">
         <Box className='box1'>
           <Box className='profilBox'>
@@ -49,9 +63,6 @@ const Post = () => {
               {post.dislikes.length}
             </div>
             <div className='comShare' align='right'>
-              <IconButton aria-label="InsertComment" size="medium" onClick={selectPost}>
-                <InsertCommentIcon className='com' sx={{ "&:hover": { color: "rgb(217, 93, 245)" } }} fontSize="inherit"/>
-              </IconButton>
               <IconButton aria-label="Share" size="medium">
                 <ShareIcon className='share' sx={{ "&:hover": { color: "rgb(217, 93, 245)" } }} fontSize="inherit"/>
               </IconButton>
@@ -59,8 +70,17 @@ const Post = () => {
           </div>
         </Box>
       </Container>
-    </React.Fragment>
+      </React.Fragment>
+      </div>
+    
   );
+  } else{
+    return(
+      <div className='pozadina'>
+      <CircularProgress/>
+      </div>
+    )
+  }
 };
 
 export default Post;

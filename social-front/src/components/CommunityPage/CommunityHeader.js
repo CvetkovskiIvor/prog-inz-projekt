@@ -249,7 +249,7 @@ export default function Commun() {
       Add Your information about the page below...<br/>
       <form>
         <textarea style={{width: "100%", height: "300px", border: "none", backgroundColor: "lightgray"}} placeholder="Enter text here..."/>
-      </form><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      </form><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
       {save_button()}
       </>
       
@@ -291,7 +291,7 @@ function TransitionAlerts() {
     <>
     <body>
     <Header/>
-    <Box sx={{ width: '85%', typography: 'body1', float: 'left'}}>
+    <Box sx={{ width: '100%', typography: 'body1', float: 'left'}}>
       <TabContext value={value}>
         <Box sx={{borderColor: 'divider', boxShadow: 1}}>
           <TabList onChange={handleChange} sx={{bgcolor:'#2C2F33'}} >
@@ -313,7 +313,8 @@ function TransitionAlerts() {
         </TabPanel>
       </TabContext>
     </Box>
-    <Box className='stil_sidebar'>
+    <div className='stil_sidebar'>
+      <div className = 'stil_sidebar_text'>PAGES FOR YOU</div>
       <Media/>
       <Media/>
       <Media/>
@@ -324,7 +325,7 @@ function TransitionAlerts() {
       <Media/>
       <Media/>
       <Media/>
-    </Box>
+    </div>
     </body>
     </>
   );

@@ -17,9 +17,12 @@
     width: 70%;
     float: left;
   }
+.stil_members{
+  width: 80%;
+}
 
 .stil_home {
-
+    width: 80%;
     text-align: center;
   }
 
@@ -30,18 +33,35 @@
   
 
 .stil_info  {
+    width: 80%;
     text-align: center;
   }
 
 .stil_sidebar {
+  margin-top: 4%;
+  border-radius: 22px;
   width: 15%;
-  height: 100%;
+  height: 37%;
   position: fixed;
   background-color: #2C2F33;
-  margin-left: 85%;
+  margin-left: 84%;
   overflow-x: hidden;
   overflow-y: auto;
 }
+.stil_sidebar_text{
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  margin-left: 1.5%;
+  background-color: rgb(54, 53, 53);
+  position: fixed;
+  text-align: center;
+  color: whitesmoke;
+  z-index: 1000;
+  width: 12%;
+  height: 3%;
+  font-size: larger;
+}
+
 
 .stil_sidebar::-webkit-scrollbar {
   display: none;
@@ -70,5 +90,4 @@ h2{
     border: 3px solid rgb(54, 53, 53);
     text-align: center;
 }
-
 

@@ -1,0 +1,112 @@
+.pozadina{
+    background-color: #1E2124;
+  }
+  .kotajner{
+    display: grid;
+  }
+  
+  .postQube {
+    display:grid;
+    padding: 20px;
+    text-align: left;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  }
+  
+  .postBox1 {
+    border-radius: 10px 50px;
+    border: 2px solid #40464f;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    justify-content: left;
+    align-items: left;
+    width: 700px;
+    max-width: 700px;
+    height: fit-content;
+    box-shadow: -65px 0px 40px -70px #000000, 62px 0px 40px -70px #000000,
+                rgba(240, 46, 170, 0.5) 0px 5px,
+                rgba(240, 46, 170, 0.3) 0px 10px, 
+                rgba(240, 46, 170, 0.3) 0px 15px, 
+                rgba(240, 46, 170, 0.1) 0px 20px, 
+                rgba(240, 46, 170, 0.05) 0px 25px;
+    background-color: #3c4149;
+  }
+  
+  .profilBox {
+    display: inline;
+  }
+  
+  .profpic {
+    float: left;
+    outline-style: double;
+    outline-width: 6px;
+    outline-color: rgb(221, 179, 218);
+  }
+  
+  .ime {
+    margin-left: 50px;
+    text-shadow:0.4px 0.4px;
+    font-size: large;
+    text-decoration: underline;
+    width: fit-content;
+    color: rgba(200, 145, 251, 0.4);
+  }
+  
+  .naslov {
+    font-weight: bold;
+    color: rgb(236, 221, 201);
+  }
+  
+  .line {
+    border-width: 1px;
+    height: 2px;
+    border-color: rgb(207, 174, 237);
+    background-color: rgb(69, 14, 121);
+  }
+  
+  .opis {
+    min-height: 50px;
+    word-wrap: break-word;
+    color: rgb(189, 183, 183);
+  }
+  
+  .media {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .slika {
+    border-radius: 8px;
+    width: fit-content;
+    height: fit-content;
+    max-width: 100%;
+    max-height: 500px;
+  }
+  
+  .likedislike {
+    position: absolute;
+    z-index: 1;
+    color: rgb(205, 200, 193);
+  }
+  
+  .like {
+    color: rgb(142, 141, 141);
+  }
+  
+  .dislike {
+    color: rgb(142, 141, 141);
+  }
+  
+  .comShare {
+    position: relative;
+  }
+  
+  .com {
+    color: rgb(142, 141, 141);
+  }
+  
+  .share {
+    color: rgb(142, 141, 141);
+  }

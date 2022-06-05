@@ -10,12 +10,13 @@ import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import ShareIcon from '@mui/icons-material/Share';
 import { useDispatch, useSelector} from 'react-redux';
 import { useEffect, useState } from 'react';
-import {likePost, disLikePost, getPost} from '../../actions/posts';
+import {likePost, disLikePost, getPost, likeSelectedPost} from '../../actions/posts';
 import { CircularProgress } from '@mui/material';
 import { useParams} from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
-import '../Posts/Content/ContentSS.css';
+import './SelectedPost.css';
 import Navbar from '../Navbar/Navbar';
+import CommentSection from './comments';
 
 const Post = () => {
   const dispatch = useDispatch();
@@ -33,8 +34,8 @@ const Post = () => {
   return (
     <div className='pozadina'>
       <React.Fragment>
-      <Container className="qube">
-        <Box className='box1'>
+      <Container className="postQube">
+        <Box className='postBox1'>
           <Box className='profilBox'>
             <Avatar alt="Profile pic" className='profpic'src={post.profilePicture} />
             <p className='ime'>
@@ -53,7 +54,7 @@ const Post = () => {
           </div>
           <div className="allIcons">
             <div className='likedislike' >
-              <IconButton aria-label="VideogameAsset" disabled={!user?.result} size="medium" onClick={() => dispatch(likePost(post._id))}>
+              <IconButton aria-label="VideogameAsset" disabled={!user?.result} size="medium" onClick={() => dispatch(likeSelectedPost(post._id))}>
                 <VideogameAssetIcon className='like' sx={{ "&:hover": { color: "rgb(26, 238, 26)" } }} fontSize="inherit" />
               </IconButton>
               {post.likes.length}
@@ -70,6 +71,10 @@ const Post = () => {
           </div>
         </Box>
       </Container>
+      <br/>
+      <CommentSection/>
+      
+
       </React.Fragment>
       </div>
     

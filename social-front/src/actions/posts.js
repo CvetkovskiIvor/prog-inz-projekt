@@ -36,6 +36,15 @@ export const getPosts = () => async (dispatch) => {
       console.log(error.message);
     }
   };
+  export const likeSelectedPost = (id) => async (dispatch) => {
+    try {
+      const { data } = await api.likePost(id);
+  
+      dispatch({ type: 'LIKE_SELECTED', payload: data });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   export const disLikePost = (id) => async (dispatch) => {
     try {
       const { data } = await api.disLikePost(id);

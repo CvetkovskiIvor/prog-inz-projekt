@@ -1,0 +1,34 @@
+.add-comment {
+    display: grid;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: 28px;
+    max-width: 725px;
+    color: rgb(236, 221, 201);
+
+}
+.commentHeader {
+    margin-left: 28px;
+    font-weight: bold;
+    color: rgb(236, 221, 201);
+  }
+  .commentBox {
+    color: rgb(236, 221, 201);
+    border-radius: 10px 30px;
+    border: 2px solid #40464f;
+    padding: 10px;
+    margin-left: 28px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: auto;
+    max-width: 700px;
+    min-height: 50px;
+    height: fit-content;
+    background-color: #3c4149;
+    box-shadow: -65px 0px 40px -70px #000000, 62px 0px 40px -70px #000000,
+    rgba(240, 46, 170, 0.5) 0px 5px,
+    rgba(240, 46, 170, 0.3) 0px 10px, 
+    rgba(240, 46, 170, 0.3) 0px 15px, 
+    rgba(240, 46, 170, 0.1) 0px 20px, 
+    rgba(240, 46, 170, 0.05) 0px 25px;
+  }

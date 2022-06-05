@@ -1,0 +1,93 @@
+*::-webkit-scrollbar{
+  background: rgb(54, 53, 53);
+  width: 12px;
+}
+*::-webkit-scrollbar-thumb{
+  background-color: gray;
+  border-radius: 22px;
+  width: 5px;
+}
+
+.stil_ljudi  {
+    float: right;
+    margin-right: 10%;
+  }
+
+.stil_member_info  {
+    width: 70%;
+    float: left;
+  }
+.stil_members{
+  width: 80%;
+}
+
+.stil_home {
+    width: 80%;
+    text-align: center;
+  }
+
+.stil_alert_box{
+    width: 100%;
+    float:center;
+  }
+  
+
+.stil_info  {
+    width: 80%;
+    text-align: center;
+  }
+
+.stil_sidebar {
+  margin-top: 4%;
+  border-radius: 22px;
+  width: 15%;
+  height: 37%;
+  position: fixed;
+  background-color: #2C2F33;
+  margin-left: 84%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.stil_sidebar_text{
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  margin-left: 1.5%;
+  background-color: rgb(54, 53, 53);
+  position: fixed;
+  text-align: center;
+  color: whitesmoke;
+  z-index: 1000;
+  width: 12%;
+  height: 3%;
+  font-size: larger;
+}
+
+
+.stil_sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+body{
+  background: url("backgroundRework2.jpg") no-repeat center center fixed;
+  background-color: gray;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h2{
+  color: whitesmoke;
+}
+
+.test_za_sliku{
+  background: #2C2F33;
+    background-position: center;
+    background-size: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid rgb(54, 53, 53);
+    text-align: center;
+}
+

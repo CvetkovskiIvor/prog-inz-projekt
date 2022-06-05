@@ -25,8 +25,9 @@ const CommentSection = ({ post }) => {
 
     setComment("");
     setComments(newComments);
+    console.log(comment);
 
-    commentsRef.current.scrollIntoView({ behavior: "smooth" });
+    // commentsRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
 
@@ -46,8 +47,9 @@ const CommentSection = ({ post }) => {
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
+          </div>
           <Button
-            style={{ marginTop: "10px" }}
+            style={{ marginTop: "10px", marginLeft: "28px", backgroundColor:"#2159b4", color:"#f3f5f8" }}
             disabled={!comment.length}
             color="primary"
             variant="contained"
@@ -55,7 +57,6 @@ const CommentSection = ({ post }) => {
           >
             Comment
           </Button>
-          </div>
           <div className="commentHeader" >
           <br/>
         <Typography gutterBottom variant="h6" >
@@ -66,18 +67,12 @@ const CommentSection = ({ post }) => {
       <div>
         <br/>
           <Box className="commentBox">
-            DaveXo9:Ovo je probni komentar.
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            Johnny: Cool post dudee
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-
-            Idiot: Niceeee post maaan
+          {comments?.map((c, i) => (
+            <Typography key={i} gutterBottom variant="subtitle1">
+              <strong>{c.split(": ")[0]}</strong>
+              {c.split(":")[1]}
+            </Typography>
+          ))}
           </Box>
  
 

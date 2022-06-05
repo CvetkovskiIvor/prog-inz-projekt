@@ -72,9 +72,7 @@ const Post = () => {
         </Box>
       </Container>
       <br/>
-      <CommentSection/>
-      
-
+      <CommentSection post={post} />
       </React.Fragment>
       </div>
     

@@ -3,8 +3,18 @@
     margin-top: 16px;
     margin-bottom: 16px;
     margin-left: 28px;
-    max-width: 725px;
+    max-width: 728px;
     color: rgb(236, 221, 201);
+    background-color: #3c4149;
+    border-radius: 10px 10px;
+    box-shadow: -65px 0px 40px -70px #000000, 62px 0px 40px -70px #000000,
+    rgba(240, 46, 170, 0.5) 0px 5px,
+    rgba(240, 46, 170, 0.3) 0px 10px, 
+    rgba(240, 46, 170, 0.3) 0px 15px, 
+    rgba(240, 46, 170, 0.1) 0px 20px, 
+    rgba(240, 46, 170, 0.05) 0px 25px;
+    
+
 
 }
 .commentHeader {
@@ -12,7 +22,7 @@
     font-weight: bold;
     color: rgb(236, 221, 201);
   }
-  .commentBox {
+.commentBox {
     color: rgb(236, 221, 201);
     border-radius: 10px 30px;
     border: 2px solid #40464f;
@@ -32,3 +42,4 @@
     rgba(240, 46, 170, 0.1) 0px 20px, 
     rgba(240, 46, 170, 0.05) 0px 25px;
   }
+

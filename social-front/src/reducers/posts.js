@@ -11,14 +11,7 @@
             case 'LIKE_SELECTED':
                 return action.payload;
             // case 'COMMENT':
-            //     return {
-            //         posts: state.posts.map((post) => {
-            //         if (post._id === +action.payload._id) {
-            //             return action.payload;
-            //         }
-            //         return post;
-            //         }),
-            //     };
+            //     return posts.posts.map((post) => (post._id === +action.payload._id ? action.payload : post));
             case 'FETCH_POST':
                 return action.payload;
                 

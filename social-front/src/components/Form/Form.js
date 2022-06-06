@@ -23,7 +23,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createPost({...postData, name: user?.result?.name}));
+    dispatch(createPost({...postData, name: user?.result?.username}));
     clear();
     
 }

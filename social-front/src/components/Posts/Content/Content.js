@@ -30,7 +30,7 @@ const ContentTemplate = ({post, setCurrentId}) => {
           <Box className='profilBox'>
             <Avatar alt="Profile pic" className='profpic'src={post.profilePicture} />
             <p className='ime'>
-              {post.creator}
+              {post.name}
             </p>
           </Box>
           <Typography  variant="h5" component = "div" gutterBottom className='naslov'>

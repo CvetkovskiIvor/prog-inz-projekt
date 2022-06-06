@@ -103,9 +103,9 @@ export default function Navbar() {
       if(search.trim()){
         //dispach -> fetch search post
         dispatch(getPostsBySearch({search}));
-        history.push(`/posts/search?searchQuery=${searchQuery || 'none'}`);
+        history(`/search?searchQuery=${searchQuery || 'none'}`);
       } else{
-        history.push('/')
+        history('/')
       }
     };
 
@@ -147,10 +147,7 @@ export default function Navbar() {
               onClick = {handleClose}
               />
               <Search>
-                <SearchIconWrapper>
-                  <SearchIcon />
-                  
-                </SearchIconWrapper>
+
                 <StyledInputBase
                   placeholder="Search…" sx={{fontFamily: "-moz-initial", fontSize: 18, padding: (1, 1.2)}}
                   inputProps={{ 'aria-label': 'search' }}
@@ -159,7 +156,7 @@ export default function Navbar() {
                   onChange = {(e) => setSearch(e.target.value)}
                 />
               </Search>
-              <Button onClick={searchPost}>Search</Button>
+                <IconButton onClick={searchPost}><SearchIconWrapper> <SearchIcon sx={{color:"white"}} /> </SearchIconWrapper> </IconButton>
               <Typography variant="h5" component="div" className="multitext" align = "center" sx={{ flexGrow: 1, fontFamily: "Fantasy", marginLeft: 48, fontSize: 28, marginRight: 70}}
               >Game Times
               </Typography>

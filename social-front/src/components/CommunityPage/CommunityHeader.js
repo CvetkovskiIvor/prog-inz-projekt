@@ -213,7 +213,7 @@ export default function Commun() {
   function ljudi(){
     return (
         <div className='stil_ljudi'>
-          <h2>Currently Online:</h2><br/>
+          <h2 className='stil_online'>Currently Online:</h2><br/>
             
         <AvatarGroup total={24}>
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
@@ -288,8 +288,7 @@ function TransitionAlerts() {
 
  // finalni export
   return (
-    <>
-    <body>
+    <div>
     <Header/>
     <Box sx={{ width: '100%', typography: 'body1', float: 'left'}}>
       <TabContext value={value}>
@@ -326,8 +325,8 @@ function TransitionAlerts() {
       <Media/>
       <Media/>
     </div>
-    </body>
-    </>
+    </div>
+    
   );
 
 }

@@ -12,7 +12,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route  path='/search' element={<Home />}/>
-        <Route path='/profile' element={<ProfilePage />}/>
+        <Route path='/profile' element={<ProfilePage />}>
+          <Route path='/profile/:username' element={<ProfilePage/>}/>
+        </Route>
         <Route path='/community' element={<CommunityPage />}/>
       </Routes>
     </Router>

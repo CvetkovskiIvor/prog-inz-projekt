@@ -19,6 +19,18 @@ export const getProfiles = async (req, res) => {
   }
 }
 
+export const getProfilesByURL = async (req, res) => {
+  const { username } = req.query;
+
+  try {
+    const profiles = await ProfileMessage.findOne({ username });
+
+    res.status(200).json(profiles);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+}
+
 export const createProfile = async (req, res) => {
   const profile = req.body;
  

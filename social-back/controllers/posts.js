@@ -8,8 +8,6 @@ export const getPosts = async (req, res) => {
   try {
     const postMessages = await PostMessage.find();
 
-    console.log(postMessages);
-
     res.status(200).json(postMessages);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -30,7 +28,18 @@ export const getPostsBySearch = async (req,res) => {
     res.status(404).json({message: error.message})
   }
 };
+}
+export const getPostsByCreator = async (req, res) => {
+  const { creator } = req.query;
 
+  try {
+    const posts = await PostMessage.find({ creator });
+
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+}
 export const createPost = async (req, res) => {
   const post = req.body;
  

@@ -24,6 +24,7 @@ import { display } from '@mui/system';
 import { useNavigate} from 'react-router-dom';
 //import ChipInput from 'material-ui-chip-input';
 import { getPostsBySearch } from '../../actions/posts';
+import Link from '@mui/material/Link';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search)
@@ -103,7 +104,7 @@ export default function Navbar() {
       if(search.trim()){
         //dispach -> fetch search post
         dispatch(getPostsBySearch({search}));
-        history(`/search?searchQuery=${searchQuery || 'none'}`);
+        //history(`/search?searchQuery=${searchQuery}`);
       } else{
         history('/')
       }
@@ -157,8 +158,8 @@ export default function Navbar() {
                 />
               </Search>
                 <IconButton onClick={searchPost}><SearchIconWrapper> <SearchIcon sx={{color:"white"}} /> </SearchIconWrapper> </IconButton>
-              <Typography variant="h5" component="div" className="multitext" align = "center" sx={{ flexGrow: 1, fontFamily: "Fantasy", marginLeft: 48, fontSize: 28, marginRight: 70}}
-              >Game Times
+              <Typography color='purple' component={Link} to="/" variant="h5" underline="none" className="multitext" align = "center" sx={{ flexGrow: 1, fontFamily: "Fantasy", marginLeft: 48, fontSize: 28, marginRight: 70}}
+              ><Link href="/" color='rgb(225, 10, 240)' underline="none">Game Times</Link>
               </Typography>
               {user ? (
               <div className='profile'>

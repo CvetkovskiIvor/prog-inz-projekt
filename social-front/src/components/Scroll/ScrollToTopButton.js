@@ -21,7 +21,7 @@ function ScrollToTopButton() {
             behavior: "smooth"
         })
     }
-    return <div classname="App">
+    return <div className="App">
         {ScrollToTopButton && (
             <button style={{
                 position: "fixed",

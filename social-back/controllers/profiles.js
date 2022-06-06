@@ -1,12 +1,9 @@
 import ProfileMessage from "../models/profile.js";
 import express from 'express';
-<<<<<<< HEAD
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import PostMessage from "../models/postMessage.js";
 // Navbar buttoni
-=======
->>>>>>> profile-page
 
 const router = express.Router();
 
@@ -48,7 +45,6 @@ export const createProfile = async (req, res) => {
   }
 }
 
-<<<<<<< HEAD
 export const signin = async(req, res) => {
   const {email, password} = req.body;
 
@@ -92,6 +88,3 @@ export const signup = async(req, res) =>{
   }
 }
 export default router;
-=======
-export default router;
->>>>>>> profile-page

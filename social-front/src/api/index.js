@@ -13,6 +13,7 @@ API.interceptors.request.use((req) => {
 
     return req;
 });
+
 export const fetchPosts = () => axios.get(postUrl);
 export const fetchPostsByCreator = (username) => axios.get(`${postUrl}/search?creator=${username}`);
 export const createPost = (newPost) => axios.post(postUrl, newPost);

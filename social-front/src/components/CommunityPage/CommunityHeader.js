@@ -213,7 +213,7 @@ export default function Commun() {
   function ljudi(){
     return (
         <div className='stil_ljudi'>
-          <h2>Currently Online:</h2><br/>
+          <h2 className='stil_online'>Currently Online:</h2><br/>
             
         <AvatarGroup total={24}>
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />

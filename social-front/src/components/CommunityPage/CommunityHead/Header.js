@@ -69,7 +69,7 @@ const Input = styled('input')({
       <>
         <div class='stil_follow'>
           <label htmlFor='follow_button' onClick={remove_plus}>
-            <p id="unselectable">+</p>
+            <div class ='plusic'><p id="unselectable">+</p></div>
             <input onClick={change} type="button" id="follow_button"></input>
           </label>
         </div> 

@@ -1,6 +1,9 @@
 .pozadina {
    background-color: #1E2124;
 }
+body {
+   background-color: #1E2124;
+}
 
 .popup-overlay {
   background: rgba(24, 24, 24, 0.5);

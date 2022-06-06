@@ -288,8 +288,8 @@ function TransitionAlerts() {
 
  // finalni export
   return (
-    <>
-    <body id="pozadina_comun">
+
+    <body>
     <Header/>
     <Box sx={{ width: '100%', typography: 'body1', float: 'left'}}>
       <TabContext value={value}>
@@ -327,7 +327,7 @@ function TransitionAlerts() {
       <Media/>
     </div>
     </body>
-    </>
+    
   );
 
 }

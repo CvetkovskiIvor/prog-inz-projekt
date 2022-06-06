@@ -39,7 +39,8 @@ const CommentSection = ({ post }) => {
             fullWidth
             rows={2}
             variant="filled"
-            label="Comment"
+            label="Write a comment..."
+            inputProps={{ style: { color: "white" } }}
             placeholder="Write a comment"
             multiline
             value={comment}

@@ -58,7 +58,7 @@ export default function Commun() {
     const { loading = false } = props;
   
     return (
-      <Card sx={{ maxWidth: 345, m: 2, background: 'gray', height: 300}}>
+      <Card sx={{ maxWidth: 345, m: 2, background: 'gray', height: 350}}>
         <CardHeader
           avatar={
             loading ? (
@@ -142,7 +142,7 @@ export default function Commun() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography sx={{ color: 'lightgray', marginTop: '-2%' }}>
-            Quiccky300(quicc@gmail.com), Altimus69(succc@gmail.com), _blackSack_(giginigi@hotmail.com), Minecraft_boy123(dirtblocc@gmail.com)
+            Quiccky300(quicc@gmail.com), Altimus69(Duck100@gmail.com), _MegaMax_(MMax@hotmail.com), Minecraft_boy123(dirtbloc@gmail.com)
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -202,7 +202,7 @@ export default function Commun() {
   //save button na about dijelu
   function save_button(){
     return (
-      <Box component="span" sx={{p: 1, border: '1px solid grey', background:'#2C2F33'}}>
+      <Box component="span" sx={{p: 1, border: '1px solid grey', background: '#2C2F33'}}>
         <Button >Save</Button>
       </Box>
     );
@@ -213,7 +213,7 @@ export default function Commun() {
   function ljudi(){
     return (
         <div className='stil_ljudi'>
-          <h2>Currently Online:</h2><br/>
+          <h2 className='stil_online'>Currently Online:</h2><br/>
             
         <AvatarGroup total={24}>
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
@@ -289,7 +289,7 @@ function TransitionAlerts() {
  // finalni export
   return (
     <>
-    <body>
+    <body id="pozadina_comun">
     <Header/>
     <Box sx={{ width: '100%', typography: 'body1', float: 'left'}}>
       <TabContext value={value}>

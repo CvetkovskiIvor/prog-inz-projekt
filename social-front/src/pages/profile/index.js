@@ -21,7 +21,7 @@ function App() {
   
   useEffect(()=>{
     dispatch(getProfilesByURL(username));
-    dispatch(getPosts());
+    dispatch(getPostsByCreator(username));
   },[currentId]);
   
   const profiles = useSelector((state) => state.profiles);

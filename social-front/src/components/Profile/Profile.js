@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 
 const Profile = ({setCurrentId}) => {
   const profiles = useSelector((state) => state.profiles);
-  console.log(profiles.username);
+
   return (
     <div className="profile">
       <Box 
@@ -25,7 +25,7 @@ const Profile = ({setCurrentId}) => {
             <img className='profile-image-photo' src={ProfilePhoto} alt=''></img>
           </Box>
           <Typography className='profile-username' fontSize='20px'>
-            Synix57
+            {profiles.username}
           </Typography>
           <Typography className='profile-date' fontStyle={'Italic'} fontSize='12px'>
             Joined: {new Date().getDate()}.{new Date().getMonth() +1}.{new Date().getFullYear()}
@@ -39,7 +39,7 @@ const Profile = ({setCurrentId}) => {
             About
           </Typography>
           <Typography className='profile-bio' fontSize='15px'>
-            21, from Rijeka, love to code
+            21, from Rijeka, average League of Legends enjoyer
           </Typography>
         </Box>
       </Box>

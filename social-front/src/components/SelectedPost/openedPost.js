@@ -27,7 +27,7 @@ const Post = () => {
   useEffect(()=>{
     dispatch(getPost(id));
   },[id]);
-  console.log(post.creator);
+  console.log(post.name);
 
   
   if(post?.creator){
@@ -39,7 +39,7 @@ const Post = () => {
           <Box className='profilBox'>
             <Avatar alt="Profile pic" className='profpic'src={post.profilePicture} />
             <p className='ime'>
-              {post.creator}
+              {post.name}
             </p>
           </Box>
           <Typography  variant="h5" component = "div" gutterBottom className='naslov'>

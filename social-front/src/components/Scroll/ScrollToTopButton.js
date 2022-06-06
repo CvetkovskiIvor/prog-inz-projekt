@@ -25,8 +25,8 @@ function ScrollToTopButton() {
         {ScrollToTopButton && (
             <button style={{
                 position: "fixed",
-                bottom: "50px",
-                right: "50px",
+                bottom: "87px",
+                right: "40px",
                 height: "50px",
                 fontSize: "50px",
                 background: "#40464f",

@@ -288,8 +288,7 @@ function TransitionAlerts() {
 
  // finalni export
   return (
-    <>
-    <body>
+    <div>
     <Header/>
     <Box sx={{ width: '100%', typography: 'body1', float: 'left'}}>
       <TabContext value={value}>
@@ -326,8 +325,8 @@ function TransitionAlerts() {
       <Media/>
       <Media/>
     </div>
-    </body>
-    </>
+    </div>
+    
   );
 
 }

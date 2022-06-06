@@ -14,8 +14,6 @@ export const getPosts = async (req, res) => {
   }
 };
 
-
-
 export const getPostsBySearch = async (req,res) => {
   const {searchQuery} = req.query
   try {
@@ -28,7 +26,7 @@ export const getPostsBySearch = async (req,res) => {
     res.status(404).json({message: error.message})
   }
 };
-}
+
 export const getPostsByCreator = async (req, res) => {
   const { creator } = req.query;
 

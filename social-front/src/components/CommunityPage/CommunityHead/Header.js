@@ -111,6 +111,7 @@ const Input = styled('input')({
 export default function Header(){
     return(
       <>
+      <br/><br/><br/>
       <div class='stil_back'>
       <div class='stil_content_banner'>{banner_place()}</div><br/><br/>
       <div class='stil_content_profile'>{profile_place()}</div>

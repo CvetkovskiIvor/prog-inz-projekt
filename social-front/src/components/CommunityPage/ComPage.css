@@ -19,11 +19,13 @@
   }
 .stil_members{
   width: 80%;
+  background: transparent;
 }
 
 .stil_home {
     width: 80%;
     text-align: center;
+    background: transparent;
   }
 
 .stil_alert_box{
@@ -35,6 +37,7 @@
 .stil_info  {
     width: 80%;
     text-align: center;
+    background: transparent;
   }
 
 .stil_sidebar {
@@ -69,7 +72,6 @@
 
 body{
   background: url("backgroundRework2.jpg") no-repeat center center fixed;
-  background-color: gray;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -80,14 +82,4 @@ body{
   color: whitesmoke;
 }
 
-.test_za_sliku{
-  background: #2C2F33;
-    background-position: center;
-    background-size: auto;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid rgb(54, 53, 53);
-    text-align: center;
-}
 

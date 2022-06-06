@@ -8,25 +8,34 @@ import VideogameAssetIcon from '@mui/icons-material/VideogameAsset';
 import VideogameAssetOffIcon from '@mui/icons-material/VideogameAssetOff';
 import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import ShareIcon from '@mui/icons-material/Share';
-import { useDispatch } from 'react-redux';
-import {likePost, disLikePost} from '../../../actions/posts';
+import { useDispatch, useSelector} from 'react-redux';
+import { useEffect, useState } from 'react';
+import {likePost, disLikePost, getPost, likeSelectedPost, disLikeSelectedPost} from '../../actions/posts';
+import { CircularProgress } from '@mui/material';
+import { useParams} from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
-import { useNavigate } from "react-router-dom";
-import './ContentSS.css';
+import './SelectedPost.css';
+import Navbar from '../Navbar/Navbar';
+import CommentSection from './comments';
 
-const ContentTemplate = ({post, setCurrentId}) => {
+const Post = () => {
   const dispatch = useDispatch();
-  const history = useNavigate();
+  const { id } = useParams();
+  console.log(id);
   const user = JSON.parse(localStorage.getItem('profile'));
+  const post = useSelector((state) => state.posts);
+  useEffect(()=>{
+    dispatch(getPost(id));
+  },[id]);
+  console.log(post.creator);
 
-  const selectPost = (e) => {
-    history(`/${post._id}`);
-  };
-
+  
+  if(post?.creator){
   return (
-    <React.Fragment>
-      <Container className="qube">
-        <Box className='box1'>
+    <div className='pozadina'>
+      <React.Fragment>
+      <Container className="postQube">
+        <Box className='postBox1'>
           <Box className='profilBox'>
             <Avatar alt="Profile pic" className='profpic'src={post.profilePicture} />
             <p className='ime'>
@@ -45,19 +54,16 @@ const ContentTemplate = ({post, setCurrentId}) => {
           </div>
           <div className="allIcons">
             <div className='likedislike' >
-              <IconButton aria-label="VideogameAsset" disabled={!user?.result} size="medium" onClick={() => dispatch(likePost(post._id))}>
+              <IconButton aria-label="VideogameAsset" disabled={!user?.result} size="medium" onClick={() => dispatch(likeSelectedPost(post._id))}>
                 <VideogameAssetIcon className='like' sx={{ "&:hover": { color: "rgb(26, 238, 26)" } }} fontSize="inherit" />
               </IconButton>
               {post.likes.length}
-              <IconButton aria-label="VideogameAssetOff" disabled={!user?.result} size="medium" onClick={() => dispatch(disLikePost(post._id))}>
+              <IconButton aria-label="VideogameAssetOff" disabled={!user?.result} size="medium" onClick={() => dispatch(disLikeSelectedPost(post._id))}>
                 <VideogameAssetOffIcon className='dislike' sx={{ "&:hover": { color: "rgb(232, 96, 162)" } }} fontSize="inherit" />
               </IconButton>
               {post.dislikes.length}
             </div>
             <div className='comShare' align='right'>
-              <IconButton aria-label="InsertComment" size="medium" onClick={selectPost}>
-                <InsertCommentIcon className='com' sx={{ "&:hover": { color: "rgb(217, 93, 245)" } }} fontSize="inherit"/>
-              </IconButton>
               <IconButton aria-label="Share" size="medium">
                 <ShareIcon className='share' sx={{ "&:hover": { color: "rgb(217, 93, 245)" } }} fontSize="inherit"/>
               </IconButton>
@@ -65,8 +71,19 @@ const ContentTemplate = ({post, setCurrentId}) => {
           </div>
         </Box>
       </Container>
-    </React.Fragment>
+      <br/>
+      <CommentSection post={post} />
+      </React.Fragment>
+      </div>
+    
   );
+  } else{
+    return(
+      <div className='pozadina'>
+      <CircularProgress/>
+      </div>
+    )
+  }
 };
 
-export default ContentTemplate;
+export default Post;

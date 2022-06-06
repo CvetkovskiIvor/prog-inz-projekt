@@ -9,6 +9,15 @@ export const getPosts = () => async (dispatch) => {
       console.log(error.message);
     }
   };
+export const getPost = (id) => async (dispatch) => {
+    try {
+      const { data } = await api.fetchPost(id);
+  
+      dispatch({ type: 'FETCH_POST', payload: data });
+      } catch (error) {
+      console.log(error.message);
+    }
+  };
 export const getPostsByCreator = (username) => async (dispatch) => {
     try {
       const { data } = await api.fetchPostsByCreator(username);
@@ -45,6 +54,24 @@ export const getPostsByCreator = (username) => async (dispatch) => {
       console.log(error.message);
     }
   };
+  export const likeSelectedPost = (id) => async (dispatch) => {
+    try {
+      const { data } = await api.likePost(id);
+  
+      dispatch({ type: 'LIKE_SELECTED', payload: data });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  export const disLikeSelectedPost = (id) => async (dispatch) => {
+    try {
+      const { data } = await api.likePost(id);
+  
+      dispatch({ type: 'DISLIKE_SELECTED', payload: data });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   export const disLikePost = (id) => async (dispatch) => {
     try {
       const { data } = await api.disLikePost(id);
@@ -54,3 +81,16 @@ export const getPostsByCreator = (username) => async (dispatch) => {
       console.log(error.message);
     }
   };
+  export const commentPost = (value, id) => async (dispatch) => {
+    try {
+
+      const { data } = await api.comment(value, id);
+  
+      dispatch({ type: 'COMMENT', payload: data });
+  
+      return data.comments;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  

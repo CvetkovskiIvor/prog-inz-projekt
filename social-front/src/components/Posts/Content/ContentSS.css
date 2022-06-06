@@ -1,3 +1,10 @@
+.pozadina{
+  background-color: #1E2124;
+}
+.kotajner{
+  display: grid;
+}
+
 .qube {
   display: grid;
   text-align: left;

@@ -13,6 +13,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {signin, signup} from '../../actions/auth';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
 
 const initialState = {username: '', email: '', password: '' };
 function Copyright(props) {
@@ -32,6 +34,8 @@ const theme = createTheme();
 
 export default function SignUp() {
   const dispatch = useDispatch();
+  const history = useNavigate();
+
 
 
   const [formData, setFormData] = useState(initialState);

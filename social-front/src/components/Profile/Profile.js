@@ -6,17 +6,18 @@ import ProfilePhoto from '../../Images/profile-image.png';
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
+import { useSelector } from 'react-redux';
 
-export default function Profile() {
-  
+const Profile = ({setCurrentId}) => {
+  const profiles = useSelector((state) => state.profiles);
+
   return (
     <div className="profile">
       <Box 
-      className='profile-container'
-      width={{xs: '100%', sm: '300px'}}
-      marginTop={{xs:0, sm:'5%'}}
-      marginRight={{xs:0, sm:'10%'}}
-      marginBottom={{xs:'3%', sm:'5%'}}
+        className='profile-container'
+        marginBottom={{xs:'3%', sm:'5%'}}
+        marginTop={{xs:0, sm:'40%'}}
+        width={{xs: '100%', sm: '300px'}}
       >
         <img className='profile-cover-photo' src={CoverPhoto} alt=''></img>
         <Box className='profile-info-container'>
@@ -24,7 +25,7 @@ export default function Profile() {
             <img className='profile-image-photo' src={ProfilePhoto} alt=''></img>
           </Box>
           <Typography className='profile-username' fontSize='20px'>
-            Synix57
+            {profiles.username}
           </Typography>
           <Typography className='profile-date' fontStyle={'Italic'} fontSize='12px'>
             Joined: {new Date().getDate()}.{new Date().getMonth() +1}.{new Date().getFullYear()}
@@ -38,10 +39,11 @@ export default function Profile() {
             About
           </Typography>
           <Typography className='profile-bio' fontSize='15px'>
-            21, from Rijeka, love to code
+            21, from Rijeka, average League of Legends enjoyer
           </Typography>
         </Box>
       </Box>
     </div>
   );
-}
+};
+export default Profile;

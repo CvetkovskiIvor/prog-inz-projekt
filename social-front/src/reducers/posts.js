@@ -1,6 +1,10 @@
     export default (posts = [], action)=>{
         switch(action.type){
-            case 'FETCH_ALL':
+            case 'FETCH_ALL_POSTS':
+                return action.payload;
+            case 'FETCH_BY_CREATOR':
+                return action.payload;
+            case 'FETCH_BY_SEARCH':
                 return action.payload;
             case 'CREATE':
                 return[...posts, action.payload];

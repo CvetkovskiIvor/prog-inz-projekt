@@ -8,7 +8,11 @@ import {useDispatch} from 'react-redux';
 import Posts from '../../components/Posts/Posts';
 import {getPosts} from '../../actions/posts'; 
 import Form from '../../components/Form/Form';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import IconButton from '@mui/material/IconButton';
+import Popup from 'reactjs-popup';
 import './homePage.css';
+import ScrollToTopButton from '../../components/Scroll/ScrollToTopButton';
 
 function App() {
   const [currentId, setCurrentId] = useState(0);
@@ -30,10 +34,35 @@ function App() {
               <Posts setCurrentId={setCurrentId} c/>
             </Grid>
             <Grid item xs={12} sm={3}>
+              <Popup
+                trigger={<button className="button">
+                  <IconButton aria-label="AddCircle" size="large" >
+                    <AddCircleIcon className='addPost' sx={{ "&:hover": { color: "rgb(217, 93, 245)" } }} fontSize="inherit" />
+                  </IconButton> 
+                </button>}
+                modal
+              >
+                {close => (
+                <div className="modal">
+                  <button className="close" onClick={close}>
+                    &times;
+                  </button>
+                  <div className="header"> ADD YOUR POST </div>
+                  <div className="content">
+                    <Form/>
+                  </div>
+                  <div className="actions">
+                  </div>
+                </div>
+                )}
+              </Popup>
             </Grid>
           </Grid>
         </Container>
       </Grow>
+      <div>
+      <ScrollToTopButton/>
+      </div>
     </div>
   );
 };

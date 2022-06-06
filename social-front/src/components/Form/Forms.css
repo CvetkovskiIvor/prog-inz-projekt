@@ -1,0 +1,8 @@
+.popup {
+    max-width: 500px;
+    width: fit-content;
+    background-color: rgb(203, 203, 203);
+    border-radius: 20px;
+    border-color: rgba(24, 24, 24, 0.5);
+    
+}

@@ -4,18 +4,36 @@ export const getPosts = () => async (dispatch) => {
     try {
       const { data } = await api.fetchPosts();
   
-      dispatch({ type: 'FETCH_ALL', payload: data });
+      dispatch({ type: 'FETCH_ALL_POSTS', payload: data });
     } catch (error) {
       console.log(error.message);
     }
   };
-  export const getPost = (id) => async (dispatch) => {
+export const getPost = (id) => async (dispatch) => {
     try {
       const { data } = await api.fetchPost(id);
   
       dispatch({ type: 'FETCH_POST', payload: data });
+      } catch (error) {
+      console.log(error.message);
+    }
+  };
+export const getPostsByCreator = (username) => async (dispatch) => {
+    try {
+      const { data } = await api.fetchPostsByCreator(username);
+  
+      dispatch({ type: 'FETCH_BY_CREATOR', payload: data });
     } catch (error) {
       console.log(error.message);
+    }
+  };
+
+  export const getPostsBySearch = (searchQuery) => async (dispatch) => {
+    try {
+      const {data: {data}} = await api.fetchPostsBySearch(searchQuery);
+      dispatch({type: 'FETCH_BY_SEARCH', payload: data});
+    } catch (error) {
+      console.log(error);
     }
   };
   export const createPost = (post) => async (dispatch) => {

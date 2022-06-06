@@ -21,6 +21,15 @@ import './Navbar.css';
 import { useDispatch } from 'react-redux';
 import {useLocation} from 'react-router-dom';
 import { display } from '@mui/system';
+import { useNavigate} from 'react-router-dom';
+//import ChipInput from 'material-ui-chip-input';
+import { getPostsBySearch } from '../../actions/posts';
+import Link from '@mui/material/Link';
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search)
+}
+
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -69,6 +78,11 @@ export default function Navbar() {
     const [user,setUser] = useState(JSON.parse(localStorage.getItem('profile')));
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const query = useQuery();
+    const history = useNavigate();
+    const page = query.get('page') || 1;
+    const searchQuery = query.get('searchQuery');
+    const [search, setSearch] = useState('');
 
     const logout = () => {
       dispatch({type:'LOGOUT'});
@@ -84,6 +98,22 @@ export default function Navbar() {
 
       setUser(JSON.parse(localStorage.getItem('profile')));
     });
+
+    const searchPost = () => {
+      if(search.trim()){
+        //dispach -> fetch search post
+        dispatch(getPostsBySearch({search}));
+        //history(`/search?searchQuery=${searchQuery}`);
+      } else{
+        history('/')
+      }
+    };
+
+    const handleKeyPress = (e) => {
+      if(e.keyCode == 13){
+        searchPost();
+      }
+    };
     
     const handleChange = (event) => {
       setAuth(event.target.checked);
@@ -109,7 +139,7 @@ export default function Navbar() {
         <div className='navBar'>
           
           <Box sx={{ flexGrow: 1}}>
-          <AppBar position="static" sx = {{bgcolor: "#2C2F33"}}>
+          <AppBar position="fixed" sx = {{bgcolor: "#2C2F33"}}>
             <Toolbar>
               <Avatar
               src="https://dbdzm869oupei.cloudfront.net/img/alfombretaratoli/preview/40906.png"
@@ -117,16 +147,18 @@ export default function Navbar() {
               onClick = {handleClose}
               />
               <Search>
-                <SearchIconWrapper>
-                  <SearchIcon />
-                </SearchIconWrapper>
+
                 <StyledInputBase
                   placeholder="Search…" sx={{fontFamily: "-moz-initial", fontSize: 18, padding: (1, 1.2)}}
                   inputProps={{ 'aria-label': 'search' }}
+                  value={search}
+                  onKeyPress = {handleKeyPress}
+                  onChange = {(e) => setSearch(e.target.value)}
                 />
               </Search>
-              <Typography variant="h5" component="div" className="multitext" align = "center" sx={{ flexGrow: 1, fontFamily: "Fantasy", marginLeft: 48, position: "-webkit-sticky", fontSize: 28, marginRight: 70}}
-              >Game Times
+                <IconButton onClick={searchPost}><SearchIconWrapper> <SearchIcon sx={{color:"white"}} /> </SearchIconWrapper> </IconButton>
+              <Typography color='purple' component={Link} to="/" variant="h5" underline="none" className="multitext" align = "center" sx={{ flexGrow: 1, fontFamily: "Fantasy", marginLeft: 48, fontSize: 28, marginRight: 70}}
+              ><Link href="/" color='rgb(225, 10, 240)' underline="none">Game Times</Link>
               </Typography>
               {user ? (
               <div className='profile'>

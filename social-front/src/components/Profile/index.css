@@ -1,17 +1,13 @@
-.profile{
-  height: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.profile {
 }
 .profile-container {
   height: auto;
   max-height: 400px;
   display: block;
-  position: relative;
   float: right;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
   overflow: hidden;
-  background-color: white;
+  background-color: #3c4149;
   text-align: left;
 }
 .profile-image-container {
@@ -35,8 +31,15 @@
   height: 90px;
   margin-top: 5px;
 }
+.profile-username{
+  color: rgb(189, 183, 183);
+}
+.profile-date {
+  color: rgb(189, 183, 183);
+}
 .profile-about-container {
   text-align: left;
+  color: rgb(189, 183, 183);
   margin-left: 23px;
   margin-right: 23px;
   margin-bottom: 23px;

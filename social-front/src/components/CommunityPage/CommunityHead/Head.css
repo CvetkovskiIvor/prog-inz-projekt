@@ -1,0 +1,78 @@
+.stil_content_profile {
+  background: #2C2F33;
+  background-position: center;
+  background-size: auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid rgb(54, 53, 53);
+  margin-top: -100px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.stil_content_banner{
+width: auto; 
+height: 300px;
+border: 5px solid rgb(54, 53, 53); 
+border-radius: 22px;
+background:  gray;
+text-align: center;
+background-position: center;
+background-size: cover;
+}
+
+.stil_follow{
+margin-left: 21%;
+margin-top: -4%;
+float:left;
+color: whitesmoke;
+z-index: 300;
+}
+#follow_button{
+ background: #2C2F33;
+ border-radius: 22px;
+ width: 200%;
+ height: 110%;
+ color: whitesmoke;
+ border-color: gray;
+ transition: 0.5s;
+ position: relative;
+}
+.plusic{
+margin-left: 0.5%;
+margin-top: -0.95%;
+z-index: 300;
+position: absolute;
+float: left;
+}
+#unselectable {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+.stil_back{
+    background-color: rgb(54, 53, 53);
+}
+
+.stil_ime {
+  margin-left: 200px;
+  margin-top: -70px;
+  float: left;
+  color: #D3D3D3;
+  text-decoration: underline;
+  
+}
+
+.stil_podnaslov {
+  margin-left: 200px;
+  margin-top: -50px;
+  float: left;
+  color: #D3D3D3;
+}
+
+

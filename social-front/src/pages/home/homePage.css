@@ -1,7 +1,73 @@
 .pozadina {
    background-color: #1E2124;
 }
-body{
-   background-color: #1E2124;
 
+body {
+   background-color: #1E2124;
 }
+
+.popup-overlay {
+  background: rgba(24, 24, 24, 0.5);
+}
+
+.button {
+   position: fixed;
+   bottom: 7%;
+   right: 5%;
+   border-radius: 50px;
+   border-width: 6px;
+   padding: 10px;
+   border-color: rgb(217, 93, 245);
+   background-color: #494f59;
+}
+
+.modal {
+   font-size: 12px;
+   font-weight: bold;
+   max-width: 500px;
+   color: rgb(179, 126, 199);
+   background-color: #313841;
+   border: 10px solid;
+   border-left-style: double;
+   border-right-style: double;
+   border-top-color: rgb(155, 118, 200);
+   border-bottom-color: rgb(155, 118, 200);
+   border-left-color: rgb(90, 67, 99);
+   border-right-color: rgb(90, 67, 99);
+   padding: 7px;
+   border-radius: 50px 10px;
+ }
+
+ .modal > .header {
+   width: 100%;
+   font-size: 18px;
+   text-align: center;
+   padding: 5px;
+ }
+
+ .modal > .content {
+   width: 100%;
+   padding: 10px 5px;
+   color: black;
+ }
+
+ .modal > .actions {
+   width: 100%;
+   padding: 10px 5px;
+   margin: auto;
+   text-align: center;
+ }
+ 
+ .modal > .close {
+   cursor: pointer;
+   position: absolute;
+   display: block;
+   padding: 2px 5px;
+   line-height: 20px;
+   right: -10px;
+   top: -10px;
+   font-size: 24px;
+   background: #ffffff;
+   border-radius: 18px;
+   border: 1px solid #cfcece;
+ }

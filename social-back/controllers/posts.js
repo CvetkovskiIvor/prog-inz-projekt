@@ -23,7 +23,6 @@ export const getPost = async (req, res) => {
   } catch (error) {
       res.status(404).json({ message: error.message });
   }
-}
 };
 
 export const getPostsBySearch = async (req,res) => {

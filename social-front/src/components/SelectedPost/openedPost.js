@@ -10,7 +10,7 @@ import InsertCommentIcon from '@mui/icons-material/InsertComment';
 import ShareIcon from '@mui/icons-material/Share';
 import { useDispatch, useSelector} from 'react-redux';
 import { useEffect, useState } from 'react';
-import {likePost, disLikePost, getPost, likeSelectedPost} from '../../actions/posts';
+import {likePost, disLikePost, getPost, likeSelectedPost, disLikeSelectedPost} from '../../actions/posts';
 import { CircularProgress } from '@mui/material';
 import { useParams} from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -58,7 +58,7 @@ const Post = () => {
                 <VideogameAssetIcon className='like' sx={{ "&:hover": { color: "rgb(26, 238, 26)" } }} fontSize="inherit" />
               </IconButton>
               {post.likes.length}
-              <IconButton aria-label="VideogameAssetOff" disabled={!user?.result} size="medium" onClick={() => dispatch(disLikePost(post._id))}>
+              <IconButton aria-label="VideogameAssetOff" disabled={!user?.result} size="medium" onClick={() => dispatch(disLikeSelectedPost(post._id))}>
                 <VideogameAssetOffIcon className='dislike' sx={{ "&:hover": { color: "rgb(232, 96, 162)" } }} fontSize="inherit" />
               </IconButton>
               {post.dislikes.length}

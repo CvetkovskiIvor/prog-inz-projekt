@@ -49,7 +49,7 @@ const CommentSection = ({ post }) => {
           </div>
           <Button
             style={{ marginTop: "10px", marginLeft: "28px", backgroundColor:"#152e5588", color:"#f3f5f8" }}
-            disabled={!comment.length}
+            disabled={!comment.length || !user?.result}
             color="primary"
             variant="contained"
             onClick={handleComment}

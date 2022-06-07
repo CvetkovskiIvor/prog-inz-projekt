@@ -71,12 +71,13 @@
 }
 
 body{
-  background: url("backgroundRework2.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+  /* background: url("backgroundRework2.jpg") no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;*/
+   background-color: #1E2124;
+ }
 
 .stil_online{
   color: whitesmoke;

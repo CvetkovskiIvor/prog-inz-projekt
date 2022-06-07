@@ -65,7 +65,7 @@ export const getPostsByCreator = (username) => async (dispatch) => {
   };
   export const disLikeSelectedPost = (id) => async (dispatch) => {
     try {
-      const { data } = await api.likePost(id);
+      const { data } = await api.disLikePost(id);
   
       dispatch({ type: 'DISLIKE_SELECTED', payload: data });
     } catch (error) {

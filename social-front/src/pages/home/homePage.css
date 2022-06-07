@@ -7,13 +7,13 @@ body {
 }
 
 .popup-overlay {
-  background: rgba(24, 24, 24, 0.5);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .button {
    position: fixed;
    bottom: 7%;
-   right: 5%;
+   right: 8%;
    border-radius: 50px;
    border-width: 6px;
    padding: 10px;
@@ -25,17 +25,13 @@ body {
    font-size: 12px;
    font-weight: bold;
    max-width: 500px;
-   color: rgb(179, 126, 199);
-   background-color: #313841;
+   color: rgb(161, 110, 180);
+   background-color: #1E2124;
    border: 10px solid;
-   border-left-style: double;
-   border-right-style: double;
-   border-top-color: rgb(155, 118, 200);
-   border-bottom-color: rgb(155, 118, 200);
-   border-left-color: rgb(90, 67, 99);
-   border-right-color: rgb(90, 67, 99);
+   border-style: double;
+   border-color: rgb(116, 85, 129);
    padding: 7px;
-   border-radius: 50px 10px;
+   border-radius: 10px;
  }
 
  .modal > .header {

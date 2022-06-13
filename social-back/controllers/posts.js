@@ -39,10 +39,10 @@ export const getPostsBySearch = async (req,res) => {
 };
 
 export const getPostsByCreator = async (req, res) => {
-  const { creator } = req.query;
+  const { name } = req.query;
 
   try {
-    const posts = await PostMessage.find({ creator });
+    const posts = await PostMessage.find({ name });
 
     res.status(200).json(posts);
   } catch (error) {

@@ -249,7 +249,7 @@ export default function Commun() {
       Add Your information about the page below...<br/>
       <form>
         <textarea style={{width: "100%", height: "300px", border: "none", backgroundColor: "lightgray"}} placeholder="Enter text here..."/>
-      </form><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      </form>
       {save_button()}
       </>
       

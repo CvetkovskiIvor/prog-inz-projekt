@@ -1,0 +1,17 @@
+name: Pull requestes
+on:
+  pull_request:
+
+  branches:
+    -main
+jobs:
+  check_pull_request_creator:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Update GitHub Profile README
+      uses: theboi/github-update-readme@v1.3.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        header: "Latest pull request opend by: ${{ github.actor }}."
+        repoCount: 0

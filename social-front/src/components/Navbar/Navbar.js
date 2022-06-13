@@ -149,7 +149,7 @@ export default function Navbar() {
               <Search>
 
                 <StyledInputBase
-                  placeholder="Search…" sx={{fontFamily: "-moz-initial", fontSize: 18, padding: (1, 1.2)}}
+                  placeholder="yuuuuuuuuuur" sx={{fontFamily: "-moz-initial", fontSize: 18, padding: (1, 1.2)}}
                   inputProps={{ 'aria-label': 'search' }}
                   value={search}
                   onKeyPress = {handleKeyPress}

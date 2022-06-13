@@ -1,9 +1,9 @@
 name: Pull requestes
 on:
   pull_request:
-
-  branches:
-    -main
+    # Sequence of patterns matched against refs/heads
+    branches:    
+      - main
 jobs:
   check_pull_request_creator:
     runs-on: ubuntu-latest

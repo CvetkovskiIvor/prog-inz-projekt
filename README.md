@@ -1,2 +1,10 @@
-# prog-inz-projekt
-College project with a goal to create a social network exclusively for gamers.
+## Latest issue closed by: DaveXo9.
+
+
+
+---
+
+
+
+---
+

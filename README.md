@@ -1,4 +1,4 @@
-## Latest issue closed by: DaveXo9.
+## Latest pull request opend by: DaveXo9.
 
 
 

@@ -13,5 +13,5 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        header: "Latest pull request opend by: ${{ github.actor }}."
+        header: "Latest pull request opened by: ${{ github.actor }}."
         repoCount: 0
